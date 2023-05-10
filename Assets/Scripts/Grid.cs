@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -9,14 +10,24 @@ namespace TagTag
 {
     public class Grid : MonoBehaviour
     {
-        public static Tilemap    TileMap;
-        public        GameObject obj;
+        public static   Tilemap    TileMap;
+        public          GameObject obj;
+        public static readonly string     WallTile = "Wall";
 
-        private void Start()
+        private void Awake()
         {
             TileMap                = GetComponent<Tilemap>();
-            obj.transform.position = TileMap.CellToWorld(new Vector3Int(4,-2));
-            //StartCoroutine(TraverseGrid());
+        }
+
+        public static bool CheckGridIndex(Vector3Int index)
+        {
+            Sprite sprite = TileMap.GetSprite(index);
+            if (sprite.name.Contains(WallTile))
+            {
+                return false;
+            }
+
+            return true;
         }
 
 
@@ -26,6 +37,7 @@ namespace TagTag
             {
                 for (int j = MinRowIndex; j < MaxRowIndex; j++)
                 {
+                    if (!CheckGridIndex(new Vector3Int(j, i))) continue;
                     Vector3 pos = TileMap.CellToWorld(new Vector3Int(j, i));
                     obj.transform.position = pos + TileMap.cellSize / 2f;
 
