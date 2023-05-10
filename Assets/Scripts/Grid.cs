@@ -10,24 +10,21 @@ namespace TagTag
 {
     public class Grid : MonoBehaviour
     {
-        public static   Tilemap    TileMap;
-        public          GameObject obj;
+        public static          Tilemap    TileMap;
+        public                 GameObject obj;
         public static readonly string     WallTile = "Wall";
 
         private void Awake()
         {
-            TileMap                = GetComponent<Tilemap>();
+            TileMap = GetComponent<Tilemap>();
         }
 
         public static bool CheckGridIndex(Vector3Int index)
         {
             Sprite sprite = TileMap.GetSprite(index);
-            if (sprite.name.Contains(WallTile))
-            {
-                return false;
-            }
-
-            return true;
+            return (index.x >= MinRowIndex    && index.x < MaxRowIndex)    &&
+                   (index.y >= MinColumnIndex && index.y < MaxColumnIndex) &&
+                   !sprite.name.Contains(WallTile);
         }
 
 

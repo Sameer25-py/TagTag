@@ -30,8 +30,5 @@ namespace TagTag
         {
             PlaceCharactersAtValidIndices();
         }
-        
-        
-        
     }
 }

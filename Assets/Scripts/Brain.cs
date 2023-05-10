@@ -19,6 +19,16 @@ namespace TagTag
             CurrentIndex = Grid.TileMap.WorldToCell(position);
         }
 
+        protected virtual void MoveInDirection(Vector3Int direction)
+        {
+            Vector3Int nextIndex = CurrentIndex + direction;
+            if (Grid.CheckGridIndex(nextIndex))
+            {
+                MoveCharacterToPosition(Grid.TileMap.CellToWorld(nextIndex));
+            }
+            
+        }
+
         public void MoveCharacterToPosition(Vector3 position)
         {
             if (_characterTransform)
