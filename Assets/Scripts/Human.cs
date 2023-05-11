@@ -4,6 +4,8 @@ namespace TagTag
 {
     public class Human : Brain
     {
+        private bool _isFirstInput = true;
+
         private void MoveUp()
         {
             MoveInDirection(Vector3Int.up);
@@ -24,31 +26,31 @@ namespace TagTag
             MoveInDirection(Vector3Int.right);
         }
 
-        protected override void Update()
+        private void InputMethod()
         {
-            base.Update();
-            if (ElapsedTime < PollingRate) return;
-            ElapsedTime = 0f;
-            
 # if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 MoveUp();
             }
 
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
                 MoveDown();
             }
 
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
                 MoveRight();
             }
 
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 MoveLeft();
+            }
+            else
+            {
+                _isFirstInput = false;
             }
 
 #endif
@@ -56,7 +58,11 @@ namespace TagTag
             float hor = SimpleInput.GetAxis("Horizontal");
             float ver = SimpleInput.GetAxis("Vertical");
 
-            if (hor == 0f && ver == 0f) return;
+            if (hor == 0f && ver == 0f)
+            {
+                _isFirstInput = true;
+                return;
+            }
 
             if (Mathf.Abs(hor) >= Mathf.Abs(ver))
             {
@@ -80,6 +86,21 @@ namespace TagTag
                     MoveDown();
                 }
             }
+        }
+
+        protected override void Update()
+        {
+            if (_isFirstInput)
+            {
+                _isFirstInput = false;
+                InputMethod();
+                return;
+            }
+
+            base.Update();
+            if (ElapsedTime < PollingRate) return;
+            ElapsedTime = 0f;
+            InputMethod();
         }
     }
 }

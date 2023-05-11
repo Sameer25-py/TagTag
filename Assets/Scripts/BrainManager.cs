@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TagTag
@@ -26,9 +27,24 @@ namespace TagTag
             }
         }
 
+        private void TestAIPathFindingLogic()
+        {
+            foreach (Brain brain in Brains)
+            {
+                if (brain is AI aiBrain)
+                {
+                    aiBrain.SetTarget(Brains[0].transform.position);
+                }
+            }
+        }
+        
+        
+
         private void Start()
         {
             PlaceCharactersAtValidIndices();
+            TestAIPathFindingLogic();
+            
         }
     }
 }
