@@ -24,8 +24,13 @@ namespace TagTag
             MoveInDirection(Vector3Int.right);
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
+            if (ElapsedTime < PollingRate) return;
+            ElapsedTime = 0f;
+            
+# if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 MoveUp();
@@ -44,6 +49,36 @@ namespace TagTag
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 MoveLeft();
+            }
+
+#endif
+
+            float hor = SimpleInput.GetAxis("Horizontal");
+            float ver = SimpleInput.GetAxis("Vertical");
+
+            if (hor == 0f && ver == 0f) return;
+
+            if (Mathf.Abs(hor) >= Mathf.Abs(ver))
+            {
+                if (hor > 0)
+                {
+                    MoveRight();
+                }
+                else
+                {
+                    MoveLeft();
+                }
+            }
+            else
+            {
+                if (ver > 0)
+                {
+                    MoveUp();
+                }
+                else
+                {
+                    MoveDown();
+                }
             }
         }
     }
