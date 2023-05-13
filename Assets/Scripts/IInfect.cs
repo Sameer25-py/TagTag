@@ -4,7 +4,6 @@ namespace TagTag
     {
         public void InfectCharacter();
         public void UnInfectCharacter();
-
         public void BlastCharacter();
     }
 }

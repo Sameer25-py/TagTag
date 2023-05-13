@@ -33,7 +33,7 @@ namespace TagTag
             {
                 if (brain is AI aiBrain)
                 {
-                    aiBrain.SetTarget(Brains[0].transform.position);
+                    aiBrain.SetTarget(Grid.TileMap.WorldToCell(Brains[0].transform.position));
                 }
             }
         }

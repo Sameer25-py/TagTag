@@ -1,93 +1,90 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TagTag
 {
     public class AI : Brain
     {
-        [SerializeField] private Vector2 targetPosition;
-        [SerializeField] private bool    _isTargetReached = false;
-        [SerializeField] private bool    _isTargetSet     = false;
+        [SerializeField] private Vector3Int targetIndex;
+        [SerializeField] private bool       _isTargetReached = false;
+        [SerializeField] private bool       _isTargetSet     = false;
 
-        private List<Vector3Int> _path;
+        private Queue<Vector3Int> _path = new();
+
+        private readonly List<Vector3Int> _directions = new()
+        {
+            Vector3Int.up,
+            Vector3Int.down,
+            Vector3Int.left,
+            Vector3Int.right
+        };
 
 
-        public void SetTarget(Vector2 targetPostion)
+        public void SetTarget(Vector3Int tIndex)
         {
             _isTargetReached = false;
-            targetPosition   = targetPostion;
+            targetIndex      = tIndex;
             _path            = new();
-            _isTargetSet     = true;
-            
+            FindPath();
+            _isTargetSet = true;
         }
 
-        private List<Vector3Int> GetNeighboursIndices()
+        private void FindPath()
         {
-            return new List<Vector3Int>()
-            {
-                new(CurrentIndex.x                 + 1, CurrentIndex.y),
-                new(CurrentIndex.x, CurrentIndex.y + 1),
-                new(CurrentIndex.x                 - 1, CurrentIndex.y),
-                new(CurrentIndex.x, CurrentIndex.y - 1)
-            };
-        }
+            Queue<Vector3Int> queue = new();
+            queue.Enqueue(CurrentIndex);
 
-        private List<Vector3Int> GetValidNeighboursIndices()
-        {
-            List<Vector3Int> neighboursdIndices = GetNeighboursIndices();
-            List<Vector3Int> validIndices       = new();
-            foreach (Vector3Int index in neighboursdIndices)
+            Dictionary<Vector3Int, Vector3Int> cameFrom = new();
+            cameFrom[CurrentIndex] = CurrentIndex;
+            while (queue.Count > 0)
             {
-                if (Grid.CheckGridIndex(index))
+                Vector3Int current = queue.Dequeue();
+                if (current == targetIndex)
                 {
-                    validIndices.Add(index);
+                    ConstructPath(cameFrom);
+                }
+
+                foreach (Vector3Int direction in _directions)
+                {
+                    Vector3Int next = current + direction;
+                    if (!Grid.CheckGridIndex(next) || cameFrom.ContainsKey(next))
+                    {
+                        continue;
+                    }
+
+                    queue.Enqueue(next);
+                    cameFrom[next] = current;
                 }
             }
-
-            return validIndices;
         }
 
-        private Vector3Int GetBestNeighbourIndex()
+        private void ConstructPath(Dictionary<Vector3Int, Vector3Int> cameFrom)
         {
-            List<Vector3Int> validneighbours = GetValidNeighboursIndices();
-            float            minDistance     = Mathf.Infinity;
-            Vector3Int       bestNeighbour   = CurrentIndex;
-            Vector3          currentPosition = Grid.TileMap.CellToWorld(CurrentIndex);
-            Vector3Int       targetIndex     = Grid.TileMap.WorldToCell(targetPosition);
-            foreach (Vector3Int validneighbour in validneighbours)
+            List<Vector3Int> path    = new();
+            Vector3Int       current = targetIndex;
+            while (current != CurrentIndex)
             {
-                if (targetIndex == validneighbour)
-                {
-                    _isTargetReached = true;
-                    return validneighbour;
-                }
-
-                if (_path.Contains(validneighbour))
-                {
-                    continue;
-                }
-
-                float distance = Vector2.Distance(currentPosition, targetPosition);
-                if (distance < minDistance)
-                {
-                    minDistance   = distance;
-                    bestNeighbour = validneighbour;
-                }
+                path.Add(current);
+                current = cameFrom[current];
             }
 
-            return bestNeighbour;
+            path.Reverse();
+
+            foreach (Vector3Int p in path)
+            {
+                _path.Enqueue(p);
+            }
         }
 
         private void MoveToTarget()
         {
-            if (_isTargetReached)
+            if (_path.TryDequeue(out Vector3Int nextIndex))
             {
-                return;
+                MoveCharacterToPosition(Grid.TileMap.CellToWorld(nextIndex));
             }
-
-            Vector3Int bestNeighbourIndex    = GetBestNeighbourIndex();
-            Vector3    bestNeighBourPosition = Grid.TileMap.CellToWorld(bestNeighbourIndex);
-            MoveCharacterToPosition(bestNeighBourPosition);
         }
 
         protected override void Update()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace TagTag
 {
@@ -6,9 +7,13 @@ namespace TagTag
     {
         public SpriteRenderer SpriteRenderer;
 
-        protected virtual void OnEnable()
+        private void OnEnable()
         {
             SpriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
         }
     }
 }
