@@ -3,28 +3,19 @@ using UnityEngine;
 
 namespace TagTag
 {
-    public class Brain : MonoBehaviour, IInfect
+    public abstract class Brain : MonoBehaviour
     {
         [SerializeField] protected Character  Character;
         [SerializeField] protected float      PollingRate = 0.5f;
         public                     Vector3Int CurrentIndex;
         private                    Transform  _characterTransform;
-        public                     bool       IsInfected  = false;
         protected                  float      ElapsedTime = 0f;
 
-        public void InfectCharacter()
+        
+        public void InfectBrain()
         {
-            IsInfected = true;
-        }
-
-        public void UnInfectCharacter()
-        {
-            IsInfected = false;
-        }
-
-        public void BlastCharacter()
-        {
-            IsInfected = false;
+            Character.InfectCharacter();
+            
         }
 
         protected void OnEnable()
@@ -35,6 +26,7 @@ namespace TagTag
         protected virtual void UpdateIndex(Vector3 position)
         {
             CurrentIndex = Grid.TileMap.WorldToCell(position);
+            OnIndexUpdated();
         }
 
         protected virtual void MoveInDirection(Vector3Int direction)
@@ -55,9 +47,16 @@ namespace TagTag
             }
         }
 
+        protected virtual void OnIndexUpdated() { }
+
         protected virtual void Update()
         {
             ElapsedTime += Time.deltaTime;
+        }
+
+        protected virtual void OnDestroy()
+        {
+            BrainManager.BrainDestroyed(this);
         }
     }
 }

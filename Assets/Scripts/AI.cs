@@ -85,6 +85,11 @@ namespace TagTag
             {
                 MoveCharacterToPosition(Grid.TileMap.CellToWorld(nextIndex));
             }
+            else
+            {
+                _isTargetReached = true;
+                BrainManager.DestinationReached(this);
+            }
         }
 
         protected override void Update()

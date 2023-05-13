@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TagTag
 {
-    public class Character : MonoBehaviour
+    public class Character : MonoBehaviour,IInfect
     {
         public SpriteRenderer SpriteRenderer;
 
@@ -14,6 +14,21 @@ namespace TagTag
 
         private void OnTriggerEnter2D(Collider2D col)
         {
+        }
+
+        public void InfectCharacter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UnInfectCharacter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void BlastCharacter()
+        {
+            throw new NotImplementedException();
         }
     }
 }
