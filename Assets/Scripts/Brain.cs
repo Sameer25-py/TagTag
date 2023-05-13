@@ -18,7 +18,7 @@ namespace TagTag
             MovementEnabled = true;
         }
 
-        public void InfectBrain()
+        public virtual void InfectBrain()
         {
             MovementEnabled = false;
             Invoke(nameof(EnableMovement), 1f);
@@ -59,7 +59,6 @@ namespace TagTag
 
         protected virtual void Update()
         {
-            if (!MovementEnabled) return;
             ElapsedTime += Time.deltaTime;
         }
 

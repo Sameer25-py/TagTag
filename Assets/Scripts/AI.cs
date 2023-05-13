@@ -94,7 +94,7 @@ namespace TagTag
 
         protected override void Update()
         {
-            if (!_isTargetSet || _isTargetReached) return;
+            if (!_isTargetSet || _isTargetReached || !MovementEnabled) return;
             base.Update();
             if (ElapsedTime > PollingRate)
             {

@@ -6,24 +6,41 @@ namespace TagTag
     {
         private bool _isFirstInput = true;
 
+        private delegate void MovementFunction();
+
+        private MovementFunction _lastCalledMovement = null;
+
+        public override void InfectBrain()
+        {
+            if (_lastCalledMovement != null)
+            {
+                _lastCalledMovement();
+            }
+            base.InfectBrain();
+        }
+
         private void MoveUp()
         {
             MoveInDirection(Vector3Int.up);
+            _lastCalledMovement = MoveUp;
         }
 
         private void MoveDown()
         {
             MoveInDirection(Vector3Int.down);
+            _lastCalledMovement = MoveDown;
         }
 
         private void MoveLeft()
         {
             MoveInDirection(Vector3Int.left);
+            _lastCalledMovement = MoveLeft;
         }
 
         private void MoveRight()
         {
             MoveInDirection(Vector3Int.right);
+            _lastCalledMovement = MoveRight;
         }
 
         private void InputMethod()
