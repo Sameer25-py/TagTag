@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -60,6 +61,21 @@ namespace TagTag
                     }
                 }
             }
+
+            if (InfectedBrain is not AI ai) return;
+            {
+                List<Brain> nonInfectedBrains = new();
+                foreach (Brain brain in Brains)
+                {
+                    if (brain != InfectedBrain)
+                    {
+                        nonInfectedBrains.Add(brain);
+                    }
+                }
+
+                ai.SetTarget(nonInfectedBrains[Random.Range(0, nonInfectedBrains.Count)]
+                    .CurrentIndex);
+            }
         }
 
         private void SetRandomBrainToInfect()
@@ -80,6 +96,7 @@ namespace TagTag
             if (obj)
             {
                 InfectedBrain = obj;
+                AssignAIBrainDestinations();
             }
         }
 
@@ -108,11 +125,24 @@ namespace TagTag
         private void OnAITargetReached(AI obj)
         {
             if (!obj) return;
-            if (obj != (AI)InfectedBrain)
+            if (obj != InfectedBrain)
             {
                 obj.SetTarget(GetRandomValidIndex());
             }
-            else { }
+            else
+            {
+                List<Brain> nonInfectedBrains = new();
+                foreach (Brain brain in Brains)
+                {
+                    if (brain != InfectedBrain)
+                    {
+                        nonInfectedBrains.Add(brain);
+                    }
+                }
+
+                obj.SetTarget(nonInfectedBrains[Random.Range(0, nonInfectedBrains.Count)]
+                    .CurrentIndex);
+            }
         }
     }
 }

@@ -277,6 +277,7 @@ MonoBehaviour:
   - {fileID: 722612728}
   - {fileID: 1871947909}
   randomIndexTries: 5
+  InfectedBrain: {fileID: 0}
 --- !u!4 &588651339
 Transform:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4893391814678906459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 0}
+  InfectedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &4893391814678906452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +117,7 @@ MonoBehaviour:
   Character: {fileID: 4893391814678906457}
   PollingRate: 0.5
   CurrentIndex: {x: 0, y: 0, z: 0}
-  IsInfected: 0
-  targetPosition: {x: 0, y: 0}
+  targetIndex: {x: 0, y: 0, z: 0}
   _isTargetReached: 0
   _isTargetSet: 0
 --- !u!61 &1871947913

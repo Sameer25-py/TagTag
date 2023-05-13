@@ -9,13 +9,21 @@ namespace TagTag
         [SerializeField] protected float      PollingRate = 0.5f;
         public                     Vector3Int CurrentIndex;
         private                    Transform  _characterTransform;
-        protected                  float      ElapsedTime = 0f;
+        protected                  float      ElapsedTime     = 0f;
+        [SerializeField] protected bool       MovementEnabled = true;
 
-        
+
+        protected virtual void EnableMovement()
+        {
+            MovementEnabled = true;
+        }
+
         public void InfectBrain()
         {
+            MovementEnabled = false;
+            Invoke(nameof(EnableMovement), 1f);
             Character.InfectCharacter();
-            
+            BrainManager.UpdateInfectedBrain(this);
         }
 
         protected void OnEnable()
@@ -51,12 +59,16 @@ namespace TagTag
 
         protected virtual void Update()
         {
+            if (!MovementEnabled) return;
             ElapsedTime += Time.deltaTime;
         }
 
         protected virtual void OnDestroy()
         {
-            BrainManager.BrainDestroyed(this);
+            if (BrainManager.BrainDestroyed != null)
+            {
+                BrainManager.BrainDestroyed(this);
+            }
         }
     }
 }
