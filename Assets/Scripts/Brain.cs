@@ -54,7 +54,10 @@ namespace TagTag
             }
         }
 
-        protected virtual void OnIndexUpdated() { }
+        protected virtual void OnIndexUpdated()
+        {
+            
+        }
 
         protected virtual void Update()
         {
