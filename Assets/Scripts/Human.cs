@@ -10,15 +10,6 @@ namespace TagTag
 
         private MovementFunction _lastCalledMovement = null;
 
-        public override void InfectBrain()
-        {
-            if (_lastCalledMovement != null)
-            {
-                _lastCalledMovement();
-            }
-            base.InfectBrain();
-        }
-
         private void MoveUp()
         {
             MoveInDirection(Vector3Int.up);

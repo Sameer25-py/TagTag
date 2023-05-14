@@ -80,8 +80,10 @@ namespace TagTag
 
         private void SetRandomBrainToInfect()
         {
-            Brains[Random.Range(0, Brains.Count)]
-                .InfectBrain();
+            // Brains[Random.Range(0, Brains.Count)]
+            //     .InfectBrain();
+            
+            Brains[0].InfectBrain();
         }
 
         private void OnEnable()

@@ -6,24 +6,23 @@ namespace TagTag
     public abstract class Brain : MonoBehaviour
     {
         [SerializeField] protected Character  Character;
-        [SerializeField] protected float      PollingRate = 0.5f;
+        [SerializeField] protected float      PollingRate                  = 0.5f;
+        [SerializeField] protected float      InflictInfectionImmunityTime = 1f;
         public                     Vector3Int CurrentIndex;
         private                    Transform  _characterTransform;
-        protected                  float      ElapsedTime     = 0f;
-        [SerializeField] protected bool       MovementEnabled = true;
+        protected                  float      ElapsedTime = 0f;
 
 
-        protected virtual void EnableMovement()
+        private void AttachInfectedCollider()
         {
-            MovementEnabled = true;
+            gameObject.AddComponent<InfectedCollider>();
         }
 
         public virtual void InfectBrain()
         {
-            MovementEnabled = false;
-            Invoke(nameof(EnableMovement), 1f);
             Character.InfectCharacter();
             BrainManager.UpdateInfectedBrain(this);
+            Invoke(nameof(AttachInfectedCollider), InflictInfectionImmunityTime);
         }
 
         protected void OnEnable()

@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 0}
   InfectedColor: {r: 1, g: 0, b: 0, a: 1}
+  _isInfected: 0
 --- !u!114 &4893391814678906452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
