@@ -82,8 +82,9 @@ namespace TagTag
         {
             // Brains[Random.Range(0, Brains.Count)]
             //     .InfectBrain();
-            
-            Brains[0].InfectBrain();
+
+            Brains[0]
+                .InfectBrain();
         }
 
         private void OnEnable()
@@ -98,6 +99,7 @@ namespace TagTag
             if (obj)
             {
                 InfectedBrain = obj;
+                AssignAIBrainDestinations();
             }
         }
 
