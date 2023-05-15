@@ -83,7 +83,7 @@ namespace TagTag
         {
             if (_path.TryDequeue(out Vector3Int nextIndex))
             {
-                MoveCharacterToPosition(Grid.TileMap.CellToWorld(nextIndex));
+                LerpCharacterToPosition(Grid.TileMap.CellToWorld(nextIndex));
             }
             else
             {

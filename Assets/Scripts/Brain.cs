@@ -51,16 +51,24 @@ namespace TagTag
             Vector3Int nextIndex = CurrentIndex + direction;
             if (Grid.CheckGridIndex(nextIndex))
             {
-                MoveCharacterToPosition(Grid.TileMap.CellToWorld(nextIndex));
+                LerpCharacterToPosition(Grid.TileMap.CellToWorld(nextIndex));
             }
         }
 
         public void MoveCharacterToPosition(Vector3 position)
         {
+            _characterTransform.position = position + Grid.TileMap.cellSize / 2f;
+            UpdateIndex(position);
+        }
+
+        protected virtual void LerpCharacterToPosition(Vector3 position)
+        {
             if (_characterTransform)
             {
-                _characterTransform.position = position + Grid.TileMap.cellSize / 2f;
-                UpdateIndex(position);
+                LeanTween.move(_characterTransform.gameObject, position + Grid.TileMap.cellSize / 2f, PollingRate)
+                    .setOnComplete(
+                        () => { UpdateIndex(position); })
+                    .setEaseLinear();
             }
         }
 
