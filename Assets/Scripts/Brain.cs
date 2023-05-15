@@ -8,6 +8,7 @@ namespace TagTag
         [SerializeField] protected Character  Character;
         [SerializeField] protected float      PollingRate                  = 0.5f;
         [SerializeField] protected float      InflictInfectionImmunityTime = 1f;
+        [SerializeField] protected bool       MovementAvailable            = true;
         public                     Vector3Int CurrentIndex;
         private                    Transform  _characterTransform;
         protected                  float      ElapsedTime = 0f;
@@ -18,8 +19,16 @@ namespace TagTag
             gameObject.AddComponent<InfectedCollider>();
         }
 
+        private void EnableMovement()
+        {
+            MovementAvailable = true;
+        }
+
         public virtual void InfectBrain()
         {
+            MovementAvailable = false;
+            ElapsedTime       = 0f;
+            Invoke(nameof(EnableMovement), InflictInfectionImmunityTime);
             Character.InfectCharacter();
             BrainManager.UpdateInfectedBrain(this);
             Invoke(nameof(AttachInfectedCollider), InflictInfectionImmunityTime);
@@ -28,6 +37,7 @@ namespace TagTag
         protected void OnEnable()
         {
             _characterTransform = Character.transform;
+            MovementAvailable   = true;
         }
 
         protected virtual void UpdateIndex(Vector3 position)
@@ -54,14 +64,14 @@ namespace TagTag
             }
         }
 
-        protected virtual void OnIndexUpdated()
-        {
-            
-        }
+        protected virtual void OnIndexUpdated() { }
 
         protected virtual void Update()
         {
-            ElapsedTime += Time.deltaTime;
+            if (MovementAvailable)
+            {
+                ElapsedTime += Time.deltaTime;
+            }
         }
 
         protected virtual void OnDestroy()
