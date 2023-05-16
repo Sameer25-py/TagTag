@@ -96,7 +96,7 @@ namespace TagTag
             if (obj)
             {
                 InfectedBrain = obj;
-                AssignAIBrainDestinations();
+                //AssignAIBrainDestinations();
             }
         }
 
