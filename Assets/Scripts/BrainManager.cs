@@ -9,26 +9,26 @@ namespace TagTag
     public class BrainManager : MonoBehaviour
     {
         [SerializeField] private List<Brain> Brains;
-        [SerializeField] private int         randomIndexTries = 5;
+        [SerializeField] private int         IndexTries = 5;
 
         public static Action<AI>    DestinationReached;
         public static Action<Brain> BrainDestroyed;
         public static Action<Brain> UpdateInfectedBrain;
+        public static Action<Brain> InfectRandomBrain;
 
         public Brain InfectedBrain;
 
-        private Vector3Int GetRandomValidIndex()
+        public void OnInfectRandomBrainCalled(Brain brainToExculde)
         {
-            for (int i = 0; i < randomIndexTries; i++)
+            Brain randomBrain = Brains[Random.Range(0, Brains.Count)];
+            if (randomBrain == brainToExculde)
             {
-                Vector3Int randomIndex = GridInfo.GetRandomIndexInGrid();
-                if (Grid.CheckGridIndex(randomIndex))
-                {
-                    return randomIndex;
-                }
+                OnInfectRandomBrainCalled(brainToExculde);
             }
-
-            return new();
+            else
+            {
+                randomBrain.InfectBrain();
+            }
         }
 
         private void PlaceCharactersAtValidIndices()
@@ -36,10 +36,10 @@ namespace TagTag
             List<Vector3Int> cachedIndices = new();
             foreach (Brain brain in Brains)
             {
-                for (int i = 0; i < randomIndexTries; i++)
+                for (int i = 0; i < IndexTries; i++)
                 {
-                    Vector3Int randomIndex = GridInfo.GetRandomIndexInGrid();
-                    if (Grid.CheckGridIndex(randomIndex) && !cachedIndices.Contains(randomIndex))
+                    Vector3Int randomIndex = Grid.GetRandomValidIndex();
+                    if (!cachedIndices.Contains(randomIndex))
                     {
                         cachedIndices.Add(randomIndex);
                         brain.MoveCharacterToPosition(Grid.TileMap.CellToWorld(randomIndex));
@@ -57,7 +57,7 @@ namespace TagTag
                 {
                     if (brain != InfectedBrain)
                     {
-                        aiBrain.SetTarget(GetRandomValidIndex());
+                        aiBrain.SetTarget(Grid.GetRandomValidIndex());
                     }
                 }
             }
@@ -89,6 +89,7 @@ namespace TagTag
             DestinationReached  += OnAITargetReached;
             BrainDestroyed      += OnBrainDestroyed;
             UpdateInfectedBrain += OnInfectedBrainUpdated;
+            InfectRandomBrain   += OnInfectRandomBrainCalled;
         }
 
         private void OnInfectedBrainUpdated(Brain obj)
@@ -120,6 +121,7 @@ namespace TagTag
             DestinationReached  -= OnAITargetReached;
             BrainDestroyed      -= OnBrainDestroyed;
             UpdateInfectedBrain -= OnInfectedBrainUpdated;
+            InfectRandomBrain   -= OnInfectRandomBrainCalled;
         }
 
         private void OnAITargetReached(AI obj)
@@ -127,7 +129,7 @@ namespace TagTag
             if (!obj) return;
             if (obj != InfectedBrain)
             {
-                obj.SetTarget(GetRandomValidIndex());
+                obj.SetTarget(Grid.GetRandomValidIndex());
             }
             else
             {

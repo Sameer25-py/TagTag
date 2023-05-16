@@ -12,7 +12,8 @@ namespace TagTag
     {
         public static          Tilemap    TileMap;
         public                 GameObject obj;
-        public static readonly string     WallTile = "Wall";
+        public static readonly string     WallTile         = "Wall";
+        private static         int        randomIndexTries = 5;
 
         private void Awake()
         {
@@ -27,6 +28,19 @@ namespace TagTag
                    !sprite.name.Contains(WallTile);
         }
 
+        public static Vector3Int GetRandomValidIndex()
+        {
+            for (int i = 0; i < randomIndexTries; i++)
+            {
+                Vector3Int randomIndex = GetRandomIndexInGrid();
+                if (CheckGridIndex(randomIndex))
+                {
+                    return randomIndex;
+                }
+            }
+
+            return new();
+        }
 
         private IEnumerator TraverseGrid()
         {
