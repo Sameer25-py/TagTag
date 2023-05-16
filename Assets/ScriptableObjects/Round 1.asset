@@ -15,9 +15,6 @@ MonoBehaviour:
   Index: 1
   Time: 60
   AllowedInteractables:
-  - InteractableData: {fileID: 11400000, guid: 9a75162ebfabb4561b2d4997eeebaad1, type: 2}
-    SpawnCount: 2
-  - InteractableData: {fileID: 11400000, guid: 1beeb11eb171541648204db8db9b7afb, type: 2}
-    SpawnCount: 2
-  - InteractableData: {fileID: 11400000, guid: 2ba3ec8e83c2448238259d47ee50d6a3, type: 2}
-    SpawnCount: 2
+  - {fileID: 11400000, guid: 9a75162ebfabb4561b2d4997eeebaad1, type: 2}
+  - {fileID: 11400000, guid: 1beeb11eb171541648204db8db9b7afb, type: 2}
+  - {fileID: 11400000, guid: 2ba3ec8e83c2448238259d47ee50d6a3, type: 2}

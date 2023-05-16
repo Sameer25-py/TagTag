@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = System.Random;
 
 namespace TagTag
 {
@@ -10,9 +11,10 @@ namespace TagTag
         private                  Tilemap       _tileMap;
         public static            Action<Brain> IndexUpdated;
         [SerializeField] private Round         round;
+        private                  int           _currentInteractable;
 
-        private List<Interactable>                   _instantiatedInteractables = new();
-        private Dictionary<Vector3Int, Interactable> _interactablesDistribution = new();
+        private List<(InteractableData, IInteractable)> _instantiatedInteractables = new();
+        private Dictionary<Vector3Int, IInteractable>   _interactablesMap          = new();
 
         private void OnEnable()
         {
@@ -22,7 +24,8 @@ namespace TagTag
 
         private void InstantiateInteractables()
         {
-            _instantiatedInteractables = new();
+            _interactablesMap.Clear();
+            _currentInteractable = 0;
             for (int i = 0; i < round.AllowedInteractables.Count; i++)
             {
                 for (int j = 0;
@@ -30,52 +33,81 @@ namespace TagTag
                          .SpawnCount;
                      j++)
                 {
-                    if (i == 0)
+                    if (round.AllowedInteractables[i]
+                            .Name == "Circle")
                     {
-                        _instantiatedInteractables.Add(new RareCircle());
+                        _instantiatedInteractables.Add((round.AllowedInteractables[i], new RareCircle()));
                     }
 
-                    else if (i == 1)
+                    else if (round.AllowedInteractables[i]
+                                 .Name == "Arrow")
                     {
-                        _instantiatedInteractables.Add(new RareArrow());
+                        _instantiatedInteractables.Add((round.AllowedInteractables[i], new RareArrow()));
                     }
 
-                    else if (i == 2)
+                    else if (round.AllowedInteractables[i]
+                                 .Name == "Freeze")
                     {
-                        _instantiatedInteractables.Add(new RareFreeze());
+                        _instantiatedInteractables.Add((round.AllowedInteractables[i], new RareFreeze()));
                     }
                 }
             }
         }
 
-        private void CreateInteracblesDistribution()
+        private void SpawnInteractable()
         {
-            
+            (InteractableData data, IInteractable interactable) =
+                _instantiatedInteractables[0];
+            if (interactable is null) return;
+            AddInteractableToMap(data, interactable);
+            _instantiatedInteractables.Remove((data, interactable));
         }
 
-        private void CreateInteractableDistribution(AllowedInteractable data, Interactable interactable)
+        private void AddInteractableToMap(InteractableData data, IInteractable interactable, int noOfRetries = 5)
         {
-            interactable.SpawnInteractable(_tileMap, data.InteractableData);
+            for (int i = 0; i < noOfRetries; i++)
+            {
+                Vector3Int randomIndex = Grid.GetRandomValidIndex();
+                if (_interactablesMap.ContainsKey(randomIndex)) continue;
+                _interactablesMap[randomIndex] = interactable;
+                _tileMap.SetTile(randomIndex, round.AllowedInteractables[0]
+                    .Sprite);
+                Matrix4x4 scaleMatrix = Matrix4x4.Scale(data.scale);
+                _tileMap.SetTransformMatrix(randomIndex, scaleMatrix);
+                break;
+            }
         }
 
         private void Start()
-        {   
+        {
             InstantiateInteractables();
-            CreateInteracblesDistribution();
+            SpawnInteractable();
         }
 
-        private void OnBrainIndexUpdated(Brain obj) { }
+        private void OnBrainIndexUpdated(Brain obj)
+        {
+            if (obj)
+            {
+                if (_interactablesMap.TryGetValue(obj.CurrentIndex, out IInteractable value))
+                {
+                    value.Apply(obj);
+                    _interactablesMap[obj.CurrentIndex] = null;
+                    
+                    //todo: cache this interactable and index
+                    _tileMap.SetTile(obj.CurrentIndex,null);
+                }
+            }
+        }
+        
+        private void OnDisable()
+        {
+            IndexUpdated -= OnBrainIndexUpdated;
+        }
 
-        private void OnDisable() { }
-
-        private void SpawnInteractable() { }
 
         public void SetRound(Round currentRound)
         {
             round = currentRound;
         }
     }
-
-    [Serializable]
-    public class InteractablesMap { }
 }

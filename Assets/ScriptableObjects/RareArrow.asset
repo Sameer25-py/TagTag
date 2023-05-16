@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa8b4f1ce49466f956bad89ebfe5bae, type: 3}
   m_Name: RareArrow
   m_EditorClassIdentifier: 
+  Name: Arrow
   Sprite: {fileID: 11400000, guid: 7c2ecf0e8d8f04576935b1dab84383c0, type: 2}
   SpawnCount: 2
+  scale: {x: 1, y: 1, z: 1}

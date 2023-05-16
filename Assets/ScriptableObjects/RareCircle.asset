@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa8b4f1ce49466f956bad89ebfe5bae, type: 3}
   m_Name: RareCircle
   m_EditorClassIdentifier: 
+  Name: Circle
   Sprite: {fileID: 11400000, guid: 189b841c57e52433a98f2165464bb4ff, type: 2}
   SpawnCount: 2
   scale: {x: 0.5, y: 0.5, z: 0.5}

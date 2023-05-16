@@ -30,6 +30,10 @@ namespace TagTag
         {
             LeanTween.cancel(_infectedDescrId);
             SpriteRenderer.color = _defaultColor;
+            if (TryGetComponent(out InfectedCollider collider))
+            {
+                Destroy(collider);
+            }
         }
 
         public void BlastCharacter()

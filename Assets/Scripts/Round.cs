@@ -11,13 +11,6 @@ namespace TagTag
         public int   Index;
         public float Time;
 
-        public List<AllowedInteractable> AllowedInteractables;
-    }
-
-    [Serializable]
-    public class AllowedInteractable
-    {
-        public InteractableData InteractableData;
-        public int              SpawnCount = 2;
+        public List<InteractableData> AllowedInteractables;
     }
 }

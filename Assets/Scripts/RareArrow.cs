@@ -2,14 +2,9 @@ using UnityEngine;
 
 namespace TagTag
 {
-    public class RareArrow : Interactable
+    public class RareArrow : IInteractable
     {
-        public override void ApplyInteraction(Brain brain)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void RemoveInteractable(Brain brain)
+        public void Apply(Brain brain)
         {
             throw new System.NotImplementedException();
         }

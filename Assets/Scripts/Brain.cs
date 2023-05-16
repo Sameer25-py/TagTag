@@ -72,7 +72,10 @@ namespace TagTag
             }
         }
 
-        protected virtual void OnIndexUpdated() { }
+        protected virtual void OnIndexUpdated()
+        {
+            InteractionManager.IndexUpdated(this);
+        }
 
         protected virtual void Update()
         {

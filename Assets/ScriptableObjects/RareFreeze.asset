@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa8b4f1ce49466f956bad89ebfe5bae, type: 3}
   m_Name: RareFreeze
   m_EditorClassIdentifier: 
+  Name: Freeze
   Sprite: {fileID: 11400000, guid: 94ba2d5c1ab8b4745af32c01d431be90, type: 2}
   SpawnCount: 2
+  scale: {x: 1, y: 1, z: 1}
