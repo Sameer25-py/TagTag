@@ -80,9 +80,7 @@ namespace TagTag
 
         private void SetRandomBrainToInfect()
         {
-            // Brains[Random.Range(0, Brains.Count)]
-            //     .InfectBrain();
-            Brains[0]
+            Brains[Random.Range(0, Brains.Count)]
                 .InfectBrain();
         }
 
@@ -115,7 +113,7 @@ namespace TagTag
         {
             PlaceCharactersAtValidIndices();
             SetRandomBrainToInfect();
-            //AssignAIBrainDestinations();
+            AssignAIBrainDestinations();
         }
 
         private void OnDisable()

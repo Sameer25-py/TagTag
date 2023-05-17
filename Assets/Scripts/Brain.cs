@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace TagTag
@@ -13,6 +14,18 @@ namespace TagTag
         private                    Transform  _characterTransform;
         protected                  float      ElapsedTime = 0f;
 
+        private IEnumerator ChangeMovementSpeedRoutine(float speedFactor, float duration)
+        {
+            float _cachedPollingRate = PollingRate;
+            PollingRate *= speedFactor;
+            yield return new WaitForSeconds(duration);
+            PollingRate = _cachedPollingRate;
+        }
+
+        public void ChangeMovementSpeedForTime(float speedFactor, float duration)
+        {
+            StartCoroutine(ChangeMovementSpeedRoutine(speedFactor, duration));
+        }
 
         private void AttachInfectedCollider()
         {
