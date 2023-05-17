@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace TagTag
+namespace Gameplay
 {
     public class InfectedCollider : MonoBehaviour
     {

@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace TagTag
+namespace Gameplay
 {
     public static class GridInfo
     {

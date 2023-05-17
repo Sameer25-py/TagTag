@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
-namespace TagTag
+namespace Gameplay
 {
     public abstract class Brain : MonoBehaviour
     {

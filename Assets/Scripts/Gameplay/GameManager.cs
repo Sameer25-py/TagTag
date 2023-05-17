@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using UI;
 using UnityEngine;
 
-namespace TagTag
+namespace Gameplay
 {
     public class GameManager : MonoBehaviour
     {
@@ -11,9 +11,10 @@ namespace TagTag
         public BrainManager       BrainManager;
         public InteractionManager InteractionManager;
 
-        public int   CurrentRound    = 1;
-        public int   MaxAllowedRound = 3;
-        public Timer Timer;
+        public int       CurrentRound    = 1;
+        public int       MaxAllowedRound = 3;
+        public Timer     Timer;
+        public RoundText RoundText;
 
         public static Action RoundStarted;
 
@@ -35,6 +36,7 @@ namespace TagTag
 
         private void StartRound(Round round)
         {
+            RoundText.SetRound(round.Index);
             InteractionManager.SetRound(round);
             Timer.StartTimer(round.Time);
             BrainManager.InitializeBrains();

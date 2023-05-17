@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace TagTag
+namespace Gameplay
 {
     [Serializable]
     [CreateAssetMenu(fileName = "Interactable", menuName = "Interactable", order = 0)]

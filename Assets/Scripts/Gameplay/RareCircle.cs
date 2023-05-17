@@ -1,6 +1,4 @@
-using System.Dynamic;
-
-namespace TagTag
+namespace Gameplay
 {
     public class RareCircle : IInteractable
     {

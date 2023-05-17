@@ -1,4 +1,4 @@
-namespace TagTag
+namespace Gameplay
 {
     public class RareFreeze : IInteractable
     {

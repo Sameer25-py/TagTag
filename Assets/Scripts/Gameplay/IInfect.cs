@@ -1,4 +1,4 @@
-namespace TagTag
+namespace Gameplay
 {
     public interface IInfect
     {

@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Random = System.Random;
 
-namespace TagTag
+namespace Gameplay
 {
     public class InteractionManager : MonoBehaviour
     {

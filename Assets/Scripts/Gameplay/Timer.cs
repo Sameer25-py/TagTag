@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace TagTag
+namespace Gameplay
 {
     public class Timer : MonoBehaviour
     {

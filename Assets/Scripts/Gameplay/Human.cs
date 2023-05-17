@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TagTag
+namespace Gameplay
 {
     public class Human : Brain
     {

@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace TagTag
+namespace Gameplay
 {
     public class BrainManager : MonoBehaviour
     {

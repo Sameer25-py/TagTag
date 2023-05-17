@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TagTag
+﻿namespace Gameplay
 {
     public interface IInteractable
     {

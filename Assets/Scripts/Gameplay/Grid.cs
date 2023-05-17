@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static TagTag.GridInfo;
+using static Gameplay.GridInfo;
 
-namespace TagTag
+namespace Gameplay
 {
     public class Grid : MonoBehaviour
     {

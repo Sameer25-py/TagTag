@@ -1,6 +1,4 @@
-using System.Collections;
-
-namespace TagTag
+namespace Gameplay
 {
     public class RareArrow : IInteractable
     {
