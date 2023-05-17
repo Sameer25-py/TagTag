@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Freeze
   Sprite: {fileID: 11400000, guid: 94ba2d5c1ab8b4745af32c01d431be90, type: 2}
   SpawnCount: 2
-  scale: {x: 0.5, y: 0.5, z: 0.5}
+  scale: {x: 0.7, y: 0.7, z: 0.7}

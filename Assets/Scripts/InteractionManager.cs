@@ -56,9 +56,8 @@ namespace TagTag
         private void SpawnInteractable()
         {
             (InteractableData data, IInteractable interactable) =
-                _instantiatedInteractables[2];
+                _instantiatedInteractables[4];
             if (interactable is null) return;
-            Debug.Log("here");
             AddInteractableToMap(data, interactable);
             _instantiatedInteractables.Remove((data, interactable));
         }

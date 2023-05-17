@@ -22,9 +22,21 @@ namespace TagTag
             PollingRate = _cachedPollingRate;
         }
 
+        private IEnumerator ChangeMovementAvailableRoutine(float duration)
+        {
+            MovementAvailable = false;
+            yield return new WaitForSeconds(duration);
+            MovementAvailable = true;
+        }
+
         public void ChangeMovementSpeedForTime(float speedFactor, float duration)
         {
             StartCoroutine(ChangeMovementSpeedRoutine(speedFactor, duration));
+        }
+
+        public void ChangeMovementAvailableStatusForTime(float duration)
+        {
+            StartCoroutine(ChangeMovementAvailableRoutine(duration));
         }
 
         private void AttachInfectedCollider()
