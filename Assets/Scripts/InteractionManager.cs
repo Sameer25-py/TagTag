@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = System.Random;
@@ -17,8 +18,37 @@ namespace TagTag
 
         private void OnEnable()
         {
-            _tileMap     =  GetComponent<Tilemap>();
-            IndexUpdated += OnBrainIndexUpdated;
+            _tileMap              =  GetComponent<Tilemap>();
+            IndexUpdated          += OnBrainIndexUpdated;
+            Timer.TimerProgressed += OnTimerProgressed;
+        }
+
+        private void OnTimerProgressed(float obj)
+        {
+            if (obj == 0.1f)
+            {
+                SpawnInteractable();
+            }
+            else if (obj == 0.3f)
+            {
+                SpawnInteractable();
+            }
+
+            else if (obj == 0.5)
+            {
+                SpawnInteractable();
+            }
+
+            else if (obj == 0.8f)
+            {
+                SpawnInteractable();
+                SpawnInteractable();
+            }
+
+            else if (obj == 0.9f)
+            {
+                SpawnInteractable();
+            }
         }
 
         private void InstantiateInteractables()
@@ -55,8 +85,9 @@ namespace TagTag
 
         private void SpawnInteractable()
         {
+            if (_instantiatedInteractables.Count == 0) return;
             (InteractableData data, IInteractable interactable) =
-                _instantiatedInteractables[4];
+                _instantiatedInteractables[UnityEngine.Random.Range(0, _instantiatedInteractables.Count)];
             if (interactable is null) return;
             AddInteractableToMap(data, interactable);
             _instantiatedInteractables.Remove((data, interactable));
@@ -76,35 +107,45 @@ namespace TagTag
             }
         }
 
-        private void Start()
-        {
-            InstantiateInteractables();
-            SpawnInteractable();
-        }
-
         private void OnBrainIndexUpdated(Brain obj)
         {
             if (obj)
             {
                 if (_interactablesMap.TryGetValue(obj.CurrentIndex, out IInteractable value))
                 {
-                    value?.Apply(obj);
-                    _interactablesMap[obj.CurrentIndex] = null;
+                    if (value is not null)
+                    {
+                        bool isEffectApplied = value.Apply(obj);
+                        if (!isEffectApplied) return;
+                        _interactablesMap[obj.CurrentIndex] = null;
 
-                    //todo: cache this interactable and index
-                    _tileMap.SetTile(obj.CurrentIndex, null);
+                        //todo: cache this interactable and index
+                        _tileMap.SetTile(obj.CurrentIndex, null);
+                    }
                 }
             }
         }
 
         private void OnDisable()
         {
-            IndexUpdated -= OnBrainIndexUpdated;
+            IndexUpdated          -= OnBrainIndexUpdated;
+            Timer.TimerProgressed -= OnTimerProgressed;
         }
 
         public void SetRound(Round currentRound)
         {
             round = currentRound;
+            RemoveInteractables();
+            InstantiateInteractables();
         }
+
+        private void RemoveInteractables()
+        {
+            foreach (var key in _interactablesMap.Keys)
+            {
+                _tileMap.SetTile(key, null);
+            }
+        }
+        
     }
 }

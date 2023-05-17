@@ -4,10 +4,11 @@ namespace TagTag
     {
         private float _duration = 3f;
 
-        public void Apply(Brain brain)
+        public bool Apply(Brain brain)
         {
-            if (!brain) return;
+            if (!brain) return false;
             brain.ChangeMovementAvailableStatusForTime(_duration);
+            return true;
         }
     }
 }

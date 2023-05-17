@@ -18,6 +18,17 @@ namespace TagTag
 
         public Brain InfectedBrain;
 
+        public void ChangeBrainsMovementStatus(bool status)
+        {
+            foreach (Brain brain in Brains)
+            {
+                if (brain)
+                {
+                    brain.ChangeMovementStatus(status);
+                }
+            }
+        }
+
         public void OnInfectRandomBrainCalled(Brain brainToExculde)
         {
             Brain randomBrain = Brains[Random.Range(0, Brains.Count)];
@@ -109,7 +120,7 @@ namespace TagTag
             }
         }
 
-        private void Start()
+        public void InitializeBrains()
         {
             PlaceCharactersAtValidIndices();
             SetRandomBrainToInfect();

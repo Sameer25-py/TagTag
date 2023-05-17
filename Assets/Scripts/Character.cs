@@ -14,8 +14,14 @@ namespace TagTag
 
         private void OnEnable()
         {
-            SpriteRenderer = GetComponent<SpriteRenderer>();
-            _defaultColor  = SpriteRenderer.color;
+            SpriteRenderer =  GetComponent<SpriteRenderer>();
+            _defaultColor  =  SpriteRenderer.color;
+            Timer.TimerEnd += BlastCharacter;
+        }
+
+        private void OnDisable()
+        {
+            Timer.TimerEnd -= BlastCharacter;
         }
 
         public void InfectCharacter()
@@ -30,15 +36,19 @@ namespace TagTag
         {
             LeanTween.cancel(_infectedDescrId);
             SpriteRenderer.color = _defaultColor;
-            if (TryGetComponent(out InfectedCollider collider))
+            if (TryGetComponent(out InfectedCollider col))
             {
-                Destroy(collider);
+                Destroy(col);
             }
         }
 
         public void BlastCharacter()
         {
-            throw new NotImplementedException();
+            if (TryGetComponent(out InfectedCollider _))
+            {
+                Destroy(gameObject);
+                LeanTween.cancel(_infectedDescrId);
+            }
         }
     }
 }

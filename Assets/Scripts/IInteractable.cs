@@ -4,7 +4,6 @@ namespace TagTag
 {
     public interface IInteractable
     {
-        public void Apply(Brain brain);
-        
+        public bool Apply(Brain brain);
     }
 }

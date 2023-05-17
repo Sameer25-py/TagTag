@@ -39,6 +39,11 @@ namespace TagTag
             StartCoroutine(ChangeMovementAvailableRoutine(duration));
         }
 
+        public void ChangeMovementStatus(bool status)
+        {
+            MovementAvailable = status;
+        }
+
         private void AttachInfectedCollider()
         {
             gameObject.AddComponent<InfectedCollider>();
