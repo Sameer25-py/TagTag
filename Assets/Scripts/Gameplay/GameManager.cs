@@ -15,7 +15,7 @@ namespace Gameplay
         public GameObject         Menu;
 
         public GameObject BackButton;
-        public TMP_Text   PauseTitle, PauseDescription; 
+        public TMP_Text   PauseTitle, PauseDescription;
 
         public int       CurrentRound    = 1;
         public int       MaxAllowedRound = 3;
@@ -37,11 +37,11 @@ namespace Gameplay
         private void Start()
         {
             CurrentRound = 1;
-            StartRound(Rounds[1]);
+            StartRound(Rounds[0]);
         }
 
         private void StartRound(Round round)
-        {   
+        {
             RoundText.SetRound(round.Index);
             InteractionManager.SetRound(round);
             Timer.StartTimer(round.Time);
@@ -52,6 +52,11 @@ namespace Gameplay
         private void StartRoundWithDelay()
         {
             CurrentRound += 1;
+            if (CurrentRound > MaxAllowedRound)
+            {
+                GameEnd();
+            }
+
             foreach (Round round in Rounds)
             {
                 if (round.Index == CurrentRound)
@@ -68,7 +73,7 @@ namespace Gameplay
         }
 
         public void RestartButton()
-        {   
+        {
             StartRound(Rounds[0]);
             Menu.SetActive(false);
         }
@@ -95,13 +100,21 @@ namespace Gameplay
             BrainManager.ChangeBrainsMovementStatus(true);
         }
 
-        public void GameEnd()
+        private void GameEnd()
         {
-            PauseTitle.text       = "game over";
-            PauseDescription.text = "ai won";
+            PauseTitle.text = "game over";
+            Brain brain = BrainManager.GetBrains[0];
+            if (brain is AI)
+            {
+                PauseDescription.text = "ai won";
+            }
+            else
+            {
+                PauseDescription.text = "human won";
+            }
+
             BackButton.SetActive(false);
             Menu.SetActive(true);
-            
         }
     }
 }

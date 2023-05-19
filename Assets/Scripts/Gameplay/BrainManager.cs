@@ -10,6 +10,7 @@ namespace Gameplay
         [SerializeField] private List<Brain> Brains;
         [SerializeField] private int         IndexTries = 5;
 
+        public        List<Brain>   GetBrains => Brains;
         public static Action<AI>    DestinationReached;
         public static Action<Brain> BrainDestroyed;
         public static Action<Brain> UpdateInfectedBrain;
