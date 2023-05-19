@@ -11,8 +11,8 @@ namespace Gameplay
         public static            Action<Brain> IndexUpdated;
         [SerializeField] private Round         round;
 
-        private List<(InteractableData, IInteractable)> _instantiatedInteractables = new();
-        private Dictionary<Vector3Int, IInteractable>   _interactablesMap          = new();
+        private List<(InteractableData, IInteractable)>            _instantiatedInteractables = new();
+        private Dictionary<Vector3Int, (IInteractable, AudioClip)> _interactablesMap          = new();
 
         private void OnEnable()
         {
@@ -97,7 +97,7 @@ namespace Gameplay
             {
                 Vector3Int randomIndex = Grid.GetRandomValidIndex();
                 if (_interactablesMap.ContainsKey(randomIndex)) continue;
-                _interactablesMap[randomIndex] = interactable;
+                _interactablesMap[randomIndex] = (interactable, data.EffectClip);
                 _tileMap.SetTile(randomIndex, data.Sprite);
                 Matrix4x4 scaleMatrix = Matrix4x4.Scale(data.scale);
                 _tileMap.SetTransformMatrix(randomIndex, scaleMatrix);
@@ -109,13 +109,13 @@ namespace Gameplay
         {
             if (obj)
             {
-                if (_interactablesMap.TryGetValue(obj.CurrentIndex, out IInteractable value))
+                if (_interactablesMap.TryGetValue(obj.CurrentIndex, out (IInteractable, AudioClip) value))
                 {
-                    if (value is not null)
+                    if (value.Item2 is not null)
                     {
-                        bool isEffectApplied = value.Apply(obj);
+                        bool isEffectApplied = value.Item1.Apply(obj, value.Item2);
                         if (!isEffectApplied) return;
-                        _interactablesMap[obj.CurrentIndex] = null;
+                        _interactablesMap[obj.CurrentIndex] = (null, value.Item2);
 
                         //todo: cache this interactable and index
                         _tileMap.SetTile(obj.CurrentIndex, null);
@@ -144,6 +144,5 @@ namespace Gameplay
                 _tileMap.SetTile(key, null);
             }
         }
-        
     }
 }

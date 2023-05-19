@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Gameplay
 {
     public class RareArrow : IInteractable
@@ -7,9 +9,10 @@ namespace Gameplay
         private float _duration    = 1.5f;
         
 
-        public bool Apply(Brain brain)
+        public bool Apply(Brain brain, AudioClip effectSound)
         {
             if (!brain) return false;
+            AudioManager.PlaySound(effectSound);
             brain.ChangeMovementSpeedForTime(_speedFactor, _duration);
             return true;
         }

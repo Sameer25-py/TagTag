@@ -15,6 +15,7 @@ namespace Gameplay
         private void OnEnable()
         {
             PlayExplosionSound += OnPlayExplosionSoundCalled;
+            PlaySound          += OnPlaySoundCalled;
         }
 
         private void OnPlayExplosionSoundCalled()
