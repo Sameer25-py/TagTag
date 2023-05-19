@@ -63,6 +63,11 @@ namespace Gameplay
             Invoke(nameof(AttachInfectedCollider), InflictInfectionImmunityTime);
         }
 
+        public virtual void UnInfectBrain()
+        {
+            Character.UnInfectCharacter();
+        }
+
         protected void OnEnable()
         {
             _characterTransform = Character.transform;

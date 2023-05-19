@@ -94,6 +94,21 @@ namespace Gameplay
                 .InfectBrain();
         }
 
+        private void RemoveInfectionFromAllBrains()
+        {
+            foreach (Brain brain in Brains)
+            {
+                if (brain)
+                {
+                    if (brain.TryGetComponent(out InfectedCollider col))
+                    {
+                        Destroy(col);
+                        brain.UnInfectBrain();
+                    }
+                }
+            }
+        }
+
         private void OnEnable()
         {
             DestinationReached  += OnAITargetReached;
@@ -121,6 +136,7 @@ namespace Gameplay
 
         public void InitializeBrains()
         {
+            RemoveInfectionFromAllBrains();
             PlaceCharactersAtValidIndices();
             SetRandomBrainToInfect();
             AssignAIBrainDestinations();
