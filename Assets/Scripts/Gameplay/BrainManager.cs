@@ -121,6 +121,11 @@ namespace Gameplay
         {
             if (obj)
             {
+                if (InfectedBrain)
+                {
+                    InfectedBrain.UnInfectBrain();
+                }
+
                 InfectedBrain = obj;
                 //AssignAIBrainDestinations();
             }

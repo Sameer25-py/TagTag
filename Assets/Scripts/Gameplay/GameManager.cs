@@ -31,7 +31,7 @@ namespace Gameplay
         private void Start()
         {
             CurrentRound = 1;
-            StartRound(Rounds[0]);
+            StartRound(Rounds[1]);
         }
 
         private void StartRound(Round round)

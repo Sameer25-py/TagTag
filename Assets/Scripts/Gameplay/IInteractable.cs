@@ -1,4 +1,6 @@
-﻿namespace Gameplay
+﻿using UnityEngine;
+
+namespace Gameplay
 {
     public interface IInteractable
     {

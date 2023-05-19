@@ -8,11 +8,15 @@ namespace Gameplay
         private Color          _defaultColor;
         public  Color          InfectedColor = Color.red;
 
+        private AudioSource _audioSource;
+
+        public AudioClip Tag;
 
         private int _infectedDescrId;
 
         private void OnEnable()
         {
+            _audioSource   =  GetComponent<AudioSource>();
             SpriteRenderer =  GetComponent<SpriteRenderer>();
             _defaultColor  =  SpriteRenderer.color;
             Timer.TimerEnd += BlastCharacter;
@@ -37,6 +41,7 @@ namespace Gameplay
             SpriteRenderer.color = _defaultColor;
             if (TryGetComponent(out InfectedCollider col))
             {
+                _audioSource.PlayOneShot(Tag);
                 Destroy(col);
             }
         }
@@ -45,8 +50,9 @@ namespace Gameplay
         {
             if (TryGetComponent(out InfectedCollider _))
             {
-                Destroy(gameObject);
+                AudioManager.PlayExplosionSound();
                 LeanTween.cancel(_infectedDescrId);
+                Destroy(gameObject);
             }
         }
     }
