@@ -111,7 +111,7 @@ namespace Gameplay
             {
                 if (_interactablesMap.TryGetValue(obj.CurrentIndex, out (IInteractable, AudioClip) value))
                 {
-                    if (value.Item2 is not null)
+                    if (value.Item1 is not null)
                     {
                         bool isEffectApplied = value.Item1.Apply(obj, value.Item2);
                         if (!isEffectApplied) return;
