@@ -16,4 +16,4 @@ MonoBehaviour:
   Sprite: {fileID: 11400000, guid: 189b841c57e52433a98f2165464bb4ff, type: 2}
   SpawnCount: 2
   scale: {x: 0.5, y: 0.5, z: 0.5}
-  EffectClip: {fileID: 8300000, guid: 8a300774ee3d74124af1da32b86fb5c7, type: 3}
+  EffectClip: {fileID: 0}
