@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pillar01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 557.3334
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9c4976b78003c49bb0b8649c2f60e5
+      internalID: -648829552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pillar01_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 557.3334
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4aa8a80515e54458bcd50b49f7f6cd
+      internalID: 1365001098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pillar01_2
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 557.3334
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e779b748590ea934ebbefd27baaae466
+      internalID: 966887806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pillar01_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 279.33334
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b572cc8d0040d4db7fa96f06790494
+      internalID: 708004470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pillar01_4
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 279.33334
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8071e8d5bdd60d24ca37368c129fbce4
+      internalID: 1064986206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pillar01_5
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 279.33334
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0addcf588ccc7488dd1aca710ffeb3
+      internalID: 459524562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pillar01_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333435
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7987d8a6ca966f046bf807d51a8b1cde
+      internalID: 1872382504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pillar01_7
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1.3333435
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32186916a8874074da71611ad1f2adf3
+      internalID: -1751926935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pillar01_8
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1.3333435
+        width: 270.66666
+        height: 278.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f440481a132b054d90b612e4cedc254
+      internalID: -214171539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +339,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pillar01_0: -648829552
+      pillar01_3: 708004470
+      pillar01_6: 1872382504
+      pillar01_4: 1064986206
+      pillar01_5: 459524562
+      pillar01_8: -214171539
+      pillar01_2: 966887806
+      pillar01_1: 1365001098
+      pillar01_7: -1751926935
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

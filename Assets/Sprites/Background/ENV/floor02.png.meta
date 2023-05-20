@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,763 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: floor02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 780.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfe13bbfc2df2c43a7a8ecb830902ba
+      internalID: 405279050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 780.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d010fabcae16d974fa3b3658821cea11
+      internalID: -1134318080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 780.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 735144bc7ef6b7f42877fc17b934e2b3
+      internalID: -436630595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_3
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 780.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462ba906eb4fa164db236ad890b6846e
+      internalID: 1303160090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_4
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 780.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97367ee489d20a047bda4cd4e74d2ed2
+      internalID: 1579898664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_5
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 780.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc261d01c63850d4289ae0d3bfb94a5b
+      internalID: 1393219228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 624.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09dc8c51505a05e48947e13eafc08e91
+      internalID: 332269007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 624.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a58f1586bbda9f45ad65f8ce6cd1399
+      internalID: -2028094312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_8
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 624.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31d7f8aa67258c4698066812c4a60ef
+      internalID: 1153036981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_9
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 624.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a575b7cd803894b8769fd576cd04a0
+      internalID: 576940834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_10
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 624.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe01770064b96ad4d97edd0d21607151
+      internalID: 846094494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_11
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 624.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbfcf3ce529c304d83dd5356cfff535
+      internalID: -158062170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 468.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd55c2edf1537f0429d7d0e52a1c5ec1
+      internalID: 28370286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_13
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 468.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d38c34cc49aecf47bf1189f5d0a2c8e
+      internalID: -1093387587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_14
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 468.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec56bac4443dbb4e880ab9121b2255d
+      internalID: 1175176903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_15
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 468.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267c8e88a405dc24ba16f78592fdcbc1
+      internalID: -602365130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_16
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 468.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d9a01fb8119ec468ca5a8d66b32e4c
+      internalID: -503697043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_17
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 468.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5bca7abf1b7a124c961ece796008ca7
+      internalID: -1604912507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 312.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6fbf5089a5f4242a969a7d6c1bebbf
+      internalID: -1855089716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_19
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 312.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ba2e3f324fd1a44bab0cdc3289d155
+      internalID: -489967564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_20
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 312.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4364cf020febe5c4d90ce1112e7b940c
+      internalID: -2080621209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_21
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 312.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8c8e6c0bc4b5e41b9c2db33b747410
+      internalID: -1018476223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_22
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 312.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d44a797149bd224ba40890f1fe2bdf1
+      internalID: -382786684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_23
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 312.8333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ead27071e4d9714b814c317c51c5ea2
+      internalID: -1519300801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 156.83333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63547acb9c9308d44926ca6903df3f45
+      internalID: -808973789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_25
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 156.83333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102b8307663491b4d936094d62ad279c
+      internalID: 1568069740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_26
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 156.83333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c06b2cb23d16604b99f8585be309317
+      internalID: -1267546069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_27
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 156.83333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedce8c0005d1e8408ffa254121a0249
+      internalID: -1852468506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_28
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 156.83333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b228c93eb1f4f34eb3bfb668203b05a
+      internalID: -1968307413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_29
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 156.83333
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170e2a0440d4e9840b31e8173f7b3f4c
+      internalID: -1245101918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.83332825
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509bc61848b71ec408d897bf90f3b06d
+      internalID: -2085513212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_31
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0.83332825
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f36919d9a161448b64414589de7197
+      internalID: 1030091744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_32
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0.83332825
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3145baeb3f4791c41a85d3a58c85c526
+      internalID: -522733223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_33
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 0.83332825
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08303dab12aba9b4ebba5e9c4ecf1964
+      internalID: -1965564781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_34
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0.83332825
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9427a0aabfe1eec408646debcfaa34f3
+      internalID: -343637630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor02_35
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0.83332825
+        width: 156.16667
+        height: 156.16667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db20516c0868cee47a17dba00c234cc9
+      internalID: -966322246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +906,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      floor02_10: 846094494
+      floor02_17: -1604912507
+      floor02_4: 1579898664
+      floor02_12: 28370286
+      floor02_9: 576940834
+      floor02_22: -382786684
+      floor02_29: -1245101918
+      floor02_24: -808973789
+      floor02_1: -1134318080
+      floor02_33: -1965564781
+      floor02_0: 405279050
+      floor02_13: -1093387587
+      floor02_32: -522733223
+      floor02_14: 1175176903
+      floor02_34: -343637630
+      floor02_6: 332269007
+      floor02_18: -1855089716
+      floor02_26: -1267546069
+      floor02_25: 1568069740
+      floor02_5: 1393219228
+      floor02_30: -2085513212
+      floor02_15: -602365130
+      floor02_7: -2028094312
+      floor02_35: -966322246
+      floor02_8: 1153036981
+      floor02_20: -2080621209
+      floor02_19: -489967564
+      floor02_31: 1030091744
+      floor02_16: -503697043
+      floor02_28: -1968307413
+      floor02_23: -1519300801
+      floor02_3: 1303160090
+      floor02_27: -1852468506
+      floor02_2: -436630595
+      floor02_21: -1018476223
+      floor02_11: -158062170
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

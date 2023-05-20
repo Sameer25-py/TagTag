@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: wall11_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c8f1e58a8ceec4386cb86f10798b04
+      internalID: 1982599217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall11_1
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b03cced75f909e488e6d43989492299
+      internalID: 1711097858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall11_2
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af70f2a74c36e9d4281c387aee53fa1c
+      internalID: -1472150622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall11_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c914a50f1b504fc4597faacf0b07a031
+      internalID: -2058857972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall11_4
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df65677ae5eb57e4783517c7c4fae178
+      internalID: -252312352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall11_5
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e70b75cb24889429ddf74d099c5410
+      internalID: 1974449429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall11_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcfa3becb5382d409cdc52118ad5de1
+      internalID: -290436232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall11_7
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a98845ab078c03418df9898389757a6
+      internalID: -2084987816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall11_8
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef93e4c281244c347b18e08919e44208
+      internalID: -563790068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +339,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wall11_8: -563790068
+      wall11_2: -1472150622
+      wall11_7: -2084987816
+      wall11_6: -290436232
+      wall11_0: 1982599217
+      wall11_3: -2058857972
+      wall11_5: 1974449429
+      wall11_1: 1711097858
+      wall11_4: -252312352
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: wall10_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704.6666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec64369866c6754eadd650fa9952c45
+      internalID: 492938877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall10_1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 704.6666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c454d3df07b125341a5d9772b23e93f3
+      internalID: 357161426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall10_2
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 704.6666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7a345868acfe840b357f73aed24280
+      internalID: -1723542793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall10_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352.66666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5f79a2e5f89f64593d7ef32236f4e8
+      internalID: -1181239126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall10_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 352.66666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f6ed3306743954a8407bed7fb41987
+      internalID: 119957784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall10_5
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 352.66666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c44372f8edf0842b5865d14ca81f05
+      internalID: 1113941936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall10_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666565
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bcc6b336a4c1914b924da0c35bbfcf3
+      internalID: -1292759086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall10_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0.6666565
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703b231b3de52044da0229a87110b23b
+      internalID: -1072069226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall10_8
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0.6666565
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6642c7bb38479459fc5df3b66a4c85
+      internalID: 208082120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +339,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wall10_8: 208082120
+      wall10_6: -1292759086
+      wall10_2: -1723542793
+      wall10_5: 1113941936
+      wall10_4: 119957784
+      wall10_0: 492938877
+      wall10_7: -1072069226
+      wall10_1: 357161426
+      wall10_3: -1181239126
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

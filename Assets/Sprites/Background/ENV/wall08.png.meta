@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: wall08_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704.6666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4a05a736fd413468db490dfb6d6c42
+      internalID: -1422693943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall08_1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 704.6666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92234d59aa31f1649a03ce939bb13097
+      internalID: -1426123541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall08_2
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 704.6666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6069f6df72c631d4f9c526296bf35d76
+      internalID: 846595188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall08_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352.66666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a9175975252d2449ad9076e7cf7603
+      internalID: -1892456365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall08_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 352.66666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb145a73339da9744a09cf084bccd5c7
+      internalID: 1623949215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall08_5
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 352.66666
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a9e3fdf703d54419a751a0b7d2b528
+      internalID: 925181011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall08_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666565
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21baf80ada661124fb174e31df6aa18b
+      internalID: 1560492969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall08_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0.6666565
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad46c48300f9b3a4892a23cdc3791916
+      internalID: 988790262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall08_8
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0.6666565
+        width: 352.33334
+        height: 352.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f397d70f41772c642a915bd78fba7a7a
+      internalID: -2110336003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +339,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wall08_2: 846595188
+      wall08_0: -1422693943
+      wall08_6: 1560492969
+      wall08_8: -2110336003
+      wall08_5: 925181011
+      wall08_3: -1892456365
+      wall08_4: 1623949215
+      wall08_1: -1426123541
+      wall08_7: 988790262
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

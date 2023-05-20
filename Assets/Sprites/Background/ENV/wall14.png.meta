@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: wall14_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7dac37729a26d54b9455d90d300a70c
+      internalID: -1962443197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall14_1
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26763c607bd7ac747842a3e4254f5d99
+      internalID: -352771260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall14_2
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f275d966878bb4dbd9815081a9807e
+      internalID: -1761916236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall14_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc80440e409dc24b8544d35d3d5dc4a
+      internalID: 590961814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall14_4
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68808f54e1ce14e468312b5559a1e98d
+      internalID: 630683275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall14_5
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008cd2ecc2c4a8349a7d9c078f18b20e
+      internalID: -680252439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall14_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f7c3c1e05d00446b756c7824b38420
+      internalID: -1344203000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall14_7
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d529c67196dd5749ae2d10d756a3107
+      internalID: 2052141851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall14_8
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d507cf90858a6394a9aaa169a82bdf59
+      internalID: 750539137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +339,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wall14_3: 590961814
+      wall14_6: -1344203000
+      wall14_2: -1761916236
+      wall14_4: 630683275
+      wall14_7: 2052141851
+      wall14_5: -680252439
+      wall14_8: 750539137
+      wall14_0: -1962443197
+      wall14_1: -352771260
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

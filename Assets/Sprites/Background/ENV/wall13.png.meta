@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: wall13_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8f5371b730c174bb4f1ea4b802cd99
+      internalID: -905510776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall13_1
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f40fec5be078fd4cb5126d142143530
+      internalID: 2081604567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall13_2
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 735.3334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda9a1f5db962c64b89b3aec428e8434
+      internalID: -914997126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall13_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1f103f1e9b2c246a068fecbc643420
+      internalID: -161741697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall13_4
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5784cc351342143aaa95b04b455a94
+      internalID: 1163333242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall13_5
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 368.33334
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b5cb5e012a6d44080d085ebe447367
+      internalID: 623467936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall13_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c255cebbbc0204bbf26d58ee86bf29
+      internalID: 2132152364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall13_7
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74eeb1f6f144f954ca930a29e2b8915e
+      internalID: -1531849322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall13_8
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1.3333435
+        width: 367.66666
+        height: 367.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee06f184f1c82a643919bdb208d64706
+      internalID: 1582949550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +339,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wall13_2: -914997126
+      wall13_8: 1582949550
+      wall13_1: 2081604567
+      wall13_7: -1531849322
+      wall13_5: 623467936
+      wall13_0: -905510776
+      wall13_4: 1163333242
+      wall13_3: -161741697
+      wall13_6: 2132152364
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
