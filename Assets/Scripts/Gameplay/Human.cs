@@ -10,10 +10,12 @@ namespace Gameplay
 
         private MovementFunction _lastCalledMovement = null;
 
+
         private void MoveUp()
         {
             MoveInDirection(Vector3Int.up);
             _lastCalledMovement = MoveUp;
+
         }
 
         private void MoveDown()
