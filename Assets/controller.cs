@@ -18,12 +18,7 @@ public class controller : MonoBehaviour
         _rb2D = GetComponent<Rigidbody2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log(col.transform.name);
-    }
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
@@ -51,15 +46,11 @@ public class controller : MonoBehaviour
     {
         _newPosition = _rb2D.position + _direction2D * (Time.deltaTime * Speed);
 
-        RaycastHit2D hit = Physics2D.Raycast(_rb2D.position, _direction2D, 0.3f/2f,
+        RaycastHit2D hit = Physics2D.Raycast(_rb2D.position, _direction2D, 0.3f / 2,
             ~LayerMask);
         if (hit.collider == null)
         {
             _rb2D.MovePosition(_newPosition);
-        }
-        else
-        {
-            Debug.Log(hit.collider.name);
         }
     }
 }
