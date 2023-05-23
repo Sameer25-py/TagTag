@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Grid
 {
     public abstract class Brain : MonoBehaviour
     {

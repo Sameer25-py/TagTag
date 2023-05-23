@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Gameplay
+namespace Gameplay.Grid
 {
     public class BrainManager : MonoBehaviour
     {
@@ -53,7 +53,7 @@ namespace Gameplay
                     if (!cachedIndices.Contains(randomIndex))
                     {
                         cachedIndices.Add(randomIndex);
-                        brain.MoveCharacterToPosition(Grid.TileMap.CellToWorld(randomIndex));
+                            brain.MoveCharacterToPosition(Grid.TileMap.CellToWorld(randomIndex));
                         break;
                     }
                 }

@@ -1,3 +1,4 @@
+using Gameplay.Grid;
 using UnityEngine;
 
 namespace Gameplay
@@ -6,7 +7,7 @@ namespace Gameplay
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            GetComponent<Character>()
+            GetComponent<Gameplay.Grid.Character>()
                 .UnInfectCharacter();
 
             col.GetComponent<Brain>()

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Gameplay.Grid;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -95,7 +96,7 @@ namespace Gameplay
         {
             for (int i = 0; i < noOfRetries; i++)
             {
-                Vector3Int randomIndex = Grid.GetRandomValidIndex();
+                Vector3Int randomIndex = Grid.Grid.GetRandomValidIndex();
                 if (_interactablesMap.ContainsKey(randomIndex)) continue;
                 _interactablesMap[randomIndex] = (interactable, data.EffectClip);
                 _tileMap.SetTile(randomIndex, data.Sprite);

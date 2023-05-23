@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static Gameplay.GridInfo;
+using static Gameplay.Grid.GridInfo;
 
-namespace Gameplay
+namespace Gameplay.Grid
 {
     public class Grid : MonoBehaviour
     {

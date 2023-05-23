@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Grid
 {
     public class Human : Brain
     {

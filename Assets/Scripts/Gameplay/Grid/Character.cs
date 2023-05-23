@@ -1,53 +1,48 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Grid
 {
     public class Character : MonoBehaviour, IInfect
     {
-        public                     float          Speed = 1.5f;
-        protected                  Rigidbody2D    Rb2D;
-        [SerializeField] protected LayerMask      LayerMask;
-        [SerializeField] protected bool           EnableMovement = true;
-        [SerializeField] protected Color          InfectedColor  = Color.red;
-        [SerializeField] protected Vector2        MoveDirection  = Vector2.zero;
-        private                    SpriteRenderer SpriteRenderer;
-        private                    AudioSource    _audioSource;
-        private                    Color          _defaultColor;
-        public                     AudioClip      Tag;
-        private                    int            _infectedDescrId;
-        private                    Animator       _animator;
-        private static readonly    int            s_moveLeft = Animator.StringToHash("moveLeft");
-        private static readonly    int            s_moveUp   = Animator.StringToHash("moveUp");
-        private static readonly    int            s_isMoving = Animator.StringToHash("isMoving");
 
-        private Vector2 currentPosition;
-        private Vector2 previousPosition;
-        private bool    moveLeft;
-        private bool    moveUp;
-        private bool    isMoving;
+        private Vector3 previousPosition;
+        private Vector3 currentPosition;
 
-        protected virtual void OnEnable()
+        public bool isMoving = false;
+        public bool moveLeft = false;
+        public bool moveUp = false;
+        public Animator animator;
+
+
+        public SpriteRenderer SpriteRenderer;
+        private Color          _defaultColor;
+        public  Color          InfectedColor = Color.red;
+
+        private AudioSource _audioSource;
+
+        public AudioClip Tag;
+
+        private int _infectedDescrId;
+
+        private void OnEnable()
         {
-            Rb2D           =  GetComponent<Rigidbody2D>();
             _audioSource   =  GetComponent<AudioSource>();
             SpriteRenderer =  GetComponent<SpriteRenderer>();
             _defaultColor  =  SpriteRenderer.color;
             Timer.TimerEnd += BlastCharacter;
-            _animator      =  GetComponent<Animator>();
         }
 
-        protected void OnDisable()
+        private void OnDisable()
         {
             Timer.TimerEnd -= BlastCharacter;
         }
 
-        protected virtual void Update()
+        private void Update()
         {
             CheckMovement();
         }
 
-        private void CheckMovement()
+        void CheckMovement()
         {
             currentPosition = transform.position;
 
@@ -69,7 +64,7 @@ namespace Gameplay
                 // The player has moved very little (likely stopped)
                 // Handle accordingly
                 moveLeft = false;
-                moveUp   = false;
+                moveUp = false;
                 isMoving = false;
             }
             else
@@ -82,14 +77,15 @@ namespace Gameplay
                     {
                         // Player is moving right
                         moveLeft = false;
-                        moveUp   = false;
+                        moveUp = false;
                         isMoving = true;
+
                     }
                     else
                     {
                         // Player is moving left
                         moveLeft = true;
-                        moveUp   = false;
+                        moveUp = false;
                         isMoving = true;
                     }
                 }
@@ -99,14 +95,14 @@ namespace Gameplay
                     {
                         // Player is moving up
                         moveLeft = false;
-                        moveUp   = true;
+                        moveUp = true;
                         isMoving = true;
                     }
                     else
                     {
                         // Player is moving down
                         moveLeft = false;
-                        moveUp   = false;
+                        moveUp = false;
                         isMoving = true;
                     }
                 }
@@ -117,11 +113,10 @@ namespace Gameplay
 
         void UpdateAnimation(bool moveLeft, bool moveUp, bool isMoving)
         {
-            _animator.SetBool(s_moveLeft, moveLeft);
-            _animator.SetBool(s_moveUp, moveUp);
-            _animator.SetBool(s_isMoving, isMoving);
+            animator.SetBool("moveLeft", moveLeft);
+            animator.SetBool("moveUp", moveUp);
+            animator.SetBool("isMoving", isMoving);
         }
-
 
         public void InfectCharacter()
         {
