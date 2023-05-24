@@ -122,7 +122,6 @@ namespace Gameplay
             _animator.SetBool(s_isMoving, isMoving);
         }
 
-
         public void InfectCharacter()
         {
             LTDescr descr = LeanTween.color(gameObject, InfectedColor, 0.5f)

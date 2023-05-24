@@ -1,8 +1,6 @@
-﻿using System;
-using Gameplay;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace Gameplay
 {
     public class Player : Character
     {
