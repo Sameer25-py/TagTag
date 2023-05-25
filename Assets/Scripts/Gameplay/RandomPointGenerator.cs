@@ -7,12 +7,14 @@ namespace Gameplay
 {
     public class RandomPointGenerator : MonoBehaviour
     {
-        private static Tilemap tileMap;
-        private static int     tries = 100;
+        private static Tilemap   tileMap;
+        private static int       tries = 100;
+        private static Transform Transform;
 
         private void OnEnable()
         {
-            tileMap = GetComponent<Tilemap>();
+            tileMap   = GetComponent<Tilemap>();
+            Transform = transform;
         }
 
         public static Vector2 GetRandomPointOnMap()

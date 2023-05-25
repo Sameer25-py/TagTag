@@ -29,6 +29,9 @@ namespace Gameplay
         private bool          isMoving;
         private BoxCollider2D _collider2D;
 
+        [SerializeField] private bool  canInfect;
+        [SerializeField] private float infectionDelay = 2f;
+
         protected virtual void OnEnable()
         {
             Rb2D           =  GetComponent<Rigidbody2D>();
@@ -125,43 +128,44 @@ namespace Gameplay
             _animator.SetBool(s_isMoving, isMoving);
         }
 
-        private void EnableCollider()
+        private void EnableMovementAndInfectionAbilty()
         {
-            _collider2D.enabled = true;
+            canInfect      = true;
+            EnableMovement = true;
         }
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.CompareTag("ItPerson"))
+            if (col.TryGetComponent(out Character c))
             {
-                InfectCharacter();
-            }
-
-            else if (col.CompareTag("Player") && IsInfected)
-            {
-                UnInfectCharacter();
+                if (IsInfected && canInfect && !c.IsInfected)
+                {
+                    c.InfectCharacter();
+                    UnInfectCharacter();
+                }
             }
         }
+
 
         public void InfectCharacter()
         {
             IsInfected     = true;
-            gameObject.tag = "ItPerson";
+            canInfect      = false;
+            EnableMovement = false;
             Debug.Log("infected: " + gameObject.name);
             LTDescr descr = LeanTween.color(gameObject, InfectedColor, 0.5f)
                 .setLoopPingPong(-1)
                 .setEaseInOutBounce();
             _infectedDescrId = descr.id;
-            _audioSource.PlayOneShot(Tag);
         }
 
         public void UnInfectCharacter()
         {
-            IsInfected     = false;
-            gameObject.tag = "Player";
-            Debug.Log("uninfected: " + gameObject.name);
+            IsInfected = false;
+            canInfect  = false;
             LeanTween.cancel(_infectedDescrId);
             SpriteRenderer.color = _defaultColor;
+            _audioSource.PlayOneShot(Tag);
         }
 
         public void BlastCharacter()
