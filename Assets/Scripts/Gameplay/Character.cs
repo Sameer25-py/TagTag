@@ -133,6 +133,9 @@ namespace Gameplay
         {
             canInfect      = true;
             EnableMovement = true;
+            //TODO:intoduce variable
+            Speed          = 1.5f;
+
         }
 
         private void OnTriggerEnter2D(Collider2D col)
@@ -152,6 +155,7 @@ namespace Gameplay
             IsInfected     = true;
             canInfect      = false;
             EnableMovement = false;
+            Speed          = 0f;
             Invoke(nameof(EnableMovementAndInfectionAbilty), infectionDelay);
             LTDescr descr = LeanTween.color(gameObject, InfectedColor, 0.5f)
                 .setLoopPingPong(-1)
@@ -198,10 +202,13 @@ namespace Gameplay
 
         private IEnumerator ChangeEnableMovementRoutine(float time, bool status)
         {
-            bool _cachedEnableMovment = EnableMovement;
+            bool  _cachedEnableMovment = EnableMovement;
+            float _cachedspeed         = Speed;
             EnableMovement = status;
+            Speed          = 0f;
             yield return new WaitForSeconds(time);
             EnableMovement = _cachedEnableMovment;
+            Speed          = _cachedspeed;
         }
 
         public void ChangeEnableMovemntForTime(float time, bool status)
