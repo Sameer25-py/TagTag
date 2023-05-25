@@ -10,9 +10,10 @@ namespace Gameplay
 {
     public class GameManager : MonoBehaviour
     {
-        public List<Round>      Rounds;
-        public GameObject       Menu;
-        public CharacterManager CharacterManager;
+        public List<Round>         Rounds;
+        public GameObject          Menu;
+        public CharacterManager    CharacterManager;
+        public InteractableManager InteractableManager;
 
         public GameObject BackButton;
         public TMP_Text   PauseTitle, PauseDescription;
@@ -44,6 +45,7 @@ namespace Gameplay
         {
             RoundText.SetRound(round.Index);
             CharacterManager.InitializeRound();
+            InteractableManager.Initialize(round);
             Timer.StartTimer(round.Time);
         }
 
@@ -101,7 +103,7 @@ namespace Gameplay
         private void GameEnd()
         {
             PauseTitle.text = "game over";
-            Character c     = CharacterManager.GetCharacters[0];
+            Character c = CharacterManager.GetCharacters[0];
             if (c is Computer)
             {
                 PauseDescription.text = "ai won";
