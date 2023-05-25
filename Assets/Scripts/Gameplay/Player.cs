@@ -9,7 +9,11 @@ namespace Gameplay
         protected override void Update()
         {
             base.Update();
-            if (!EnableMovement) return;
+            if (!EnableMovement)
+            {
+                MoveDirection = Vector2.zero;
+                return;
+            }
 #if UNITY_EDITOR
             if (Input.GetKey(KeyCode.D))
             {
@@ -42,7 +46,7 @@ namespace Gameplay
         {
             _newPosition = Rb2D.position + MoveDirection * (Time.deltaTime * Speed);
 
-            RaycastHit2D hit = Physics2D.Raycast(Rb2D.position, MoveDirection, 0.3f / 1.5f,
+            RaycastHit2D hit = Physics2D.Raycast(Rb2D.position, MoveDirection, 0.2f,
                 ~LayerMask);
             if (hit.collider == null)
             {

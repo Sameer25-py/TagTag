@@ -152,7 +152,7 @@ namespace Gameplay
             IsInfected     = true;
             canInfect      = false;
             EnableMovement = false;
-            Debug.Log("infected: " + gameObject.name);
+            Invoke(nameof(EnableMovementAndInfectionAbilty), infectionDelay);
             LTDescr descr = LeanTween.color(gameObject, InfectedColor, 0.5f)
                 .setLoopPingPong(-1)
                 .setEaseInOutBounce();
