@@ -12,6 +12,7 @@ namespace Gameplay
         [SerializeField] private List<Character> characters;
 
         public static Action<Character> CharacterDestroyed;
+        public static Action<Character> InfectRandomCharacterExcept;
 
         public List<Character> GetCharacters => characters;
 
@@ -31,10 +32,25 @@ namespace Gameplay
             character.transform.position = randomPoint;
         }
 
-        private void SelectRandomCharacterToInfect()
+        private void SelectRandomCharacterToInfect(Character characterToExclude = null)
         {
-            characters[Random.Range(0, characters.Count)]
-                .InfectCharacter();
+            if (characterToExclude)
+            {
+                Character c = characters[Random.Range(0, characters.Count)];
+                if (c == characterToExclude)
+                {
+                    SelectRandomCharacterToInfect(characterToExclude);
+                }
+                else
+                {
+                    c.InfectCharacter();
+                }
+            }
+            else
+            {
+                characters[Random.Range(0, characters.Count)]
+                    .InfectCharacter();
+            }
         }
 
         public void ChangeCharactersMovementStatus(bool status)
@@ -61,12 +77,14 @@ namespace Gameplay
 
         private void OnEnable()
         {
-            CharacterDestroyed += OnCharacterDestroyed;
+            CharacterDestroyed          += OnCharacterDestroyed;
+            InfectRandomCharacterExcept += SelectRandomCharacterToInfect;
         }
 
         private void OnDisable()
         {
-            CharacterDestroyed -= OnCharacterDestroyed;
+            CharacterDestroyed          -= OnCharacterDestroyed;
+            InfectRandomCharacterExcept -= SelectRandomCharacterToInfect;
         }
 
         private void OnCharacterDestroyed(Character obj)

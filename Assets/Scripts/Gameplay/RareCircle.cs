@@ -1,19 +1,17 @@
-using Gameplay.Grid;
 using UnityEngine;
 
 namespace Gameplay
 {
-    public class RareCircle : IInteractable
+    public class RareCircle : Interactable
     {
-        public bool Apply(Brain brain, AudioClip effectSound)
+        protected override void ApplyEffect(Character c)
         {
-            if (!brain) return false;
-            if (!brain.TryGetComponent(out InfectedCollider _)) return false;
-            if (!brain.TryGetComponent(out Gameplay.Grid.Character character)) return false;
-            AudioManager.PlaySound(effectSound);
-            character.UnInfectCharacter();
-            BrainManager.InfectRandomBrain(brain);
-            return true;
+            if (c.IsInfected)
+            {
+                c.UnInfectCharacter();
+                CharacterManager.InfectRandomCharacterExcept?.Invoke(c);
+                base.ApplyEffect(c);
+            }
         }
     }
 }

@@ -17,3 +17,4 @@ MonoBehaviour:
   SpawnCount: 2
   scale: {x: 0.5, y: 0.5, z: 0.5}
   EffectClip: {fileID: 0}
+  Prefab: {fileID: 7824407101045601882, guid: f4df87e1fc60545c7aeabb72f12f7a9f, type: 3}

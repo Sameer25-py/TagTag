@@ -1,7 +1,6 @@
-﻿using Gameplay.Grid;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Grid
 {
     public interface IInteractable
     {

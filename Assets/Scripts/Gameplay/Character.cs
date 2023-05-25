@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Gameplay
@@ -146,7 +147,6 @@ namespace Gameplay
             }
         }
 
-
         public void InfectCharacter()
         {
             IsInfected     = true;
@@ -180,7 +180,33 @@ namespace Gameplay
 
         protected void OnDestroy()
         {
-            CharacterManager.CharacterDestroyed(this);
+            CharacterManager.CharacterDestroyed?.Invoke(this);
+        }
+
+        private IEnumerator ChangeSpeedRoutine(float speed, float time)
+        {
+            float _cachedSpeed = Speed;
+            Speed = speed;
+            yield return new WaitForSeconds(time);
+            Speed = _cachedSpeed;
+        }
+
+        public void ChangeSpeedForTime(float speed, float time)
+        {
+            StartCoroutine(ChangeSpeedRoutine(speed, time));
+        }
+
+        private IEnumerator ChangeEnableMovementRoutine(float time, bool status)
+        {
+            bool _cachedEnableMovment = EnableMovement;
+            EnableMovement = status;
+            yield return new WaitForSeconds(time);
+            EnableMovement = _cachedEnableMovment;
+        }
+
+        public void ChangeEnableMovemntForTime(float time, bool status)
+        {
+            StartCoroutine(ChangeEnableMovementRoutine(time, status));
         }
     }
 }

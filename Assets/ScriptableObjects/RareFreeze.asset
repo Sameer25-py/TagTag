@@ -16,3 +16,5 @@ MonoBehaviour:
   Sprite: {fileID: 11400000, guid: 94ba2d5c1ab8b4745af32c01d431be90, type: 2}
   SpawnCount: 2
   scale: {x: 0.7, y: 0.7, z: 0.7}
+  EffectClip: {fileID: 0}
+  Prefab: {fileID: 7795767080849564535, guid: 912d2bffb8dea40879f92e5c4e20ba55, type: 3}

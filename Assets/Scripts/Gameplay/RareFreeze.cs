@@ -1,18 +1,15 @@
-using Gameplay.Grid;
 using UnityEngine;
 
 namespace Gameplay
 {
-    public class RareFreeze : IInteractable
+    public class RareFreeze : Interactable
     {
-        private float _duration = 3f;
+        [SerializeField] private float time;
 
-        public bool Apply(Brain brain, AudioClip effectSound)
+        protected override void ApplyEffect(Character c)
         {
-            if (!brain) return false;
-            AudioManager.PlaySound(effectSound);
-            brain.ChangeMovementAvailableStatusForTime(_duration);
-            return true;
+            c.ChangeEnableMovemntForTime(time, false);
+            base.ApplyEffect(c);
         }
     }
 }
