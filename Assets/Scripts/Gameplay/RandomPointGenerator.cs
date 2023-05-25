@@ -27,7 +27,6 @@ namespace Gameplay
                     Vector2      randomPoint = tileMap.CellToWorld(randomIndex);
                     Collider2D[] colliders   = Physics2D.OverlapCircleAll(randomPoint, obstacleAvoidanceRadius);
                     if (colliders.Length == 0) return randomPoint;
-
                 }
             }
 

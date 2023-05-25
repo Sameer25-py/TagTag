@@ -99,10 +99,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0019032955, y: -0.0000006556511}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4757373, y: 1.5176018}
+  m_Size: {x: 1.3, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &9099707767272003391
 Rigidbody2D:
@@ -267,9 +267,11 @@ MonoBehaviour:
   Speed: 1.5
   LayerMask:
     serializedVersion: 2
-    m_Bits: 2
+    m_Bits: 4
   EnableMovement: 1
   InfectedColor: {r: 1, g: 0, b: 0, a: 1}
   MoveDirection: {x: 0, y: 0}
   Tag: {fileID: 8300000, guid: 8b20b6d475d8441c49e369f5bdc7d9e5, type: 3}
   IsInfected: 0
+  canInfect: 0
+  infectionDelay: 2

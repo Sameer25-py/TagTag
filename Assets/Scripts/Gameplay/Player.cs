@@ -38,7 +38,7 @@ namespace Gameplay
 #endif
             float hor = SimpleInput.GetAxis("Horizontal");
             float ver = SimpleInput.GetAxis("Vertical");
-
+            
             MoveDirection = new Vector2(hor, ver);
         }
 
