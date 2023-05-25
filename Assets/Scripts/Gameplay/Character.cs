@@ -8,7 +8,7 @@ namespace Gameplay
         public                     float          Speed = 1.5f;
         protected                  Rigidbody2D    Rb2D;
         [SerializeField] protected LayerMask      LayerMask;
-        [SerializeField] protected bool           EnableMovement = true;
+        public                     bool           EnableMovement = true;
         [SerializeField] protected Color          InfectedColor  = Color.red;
         [SerializeField] protected Vector2        MoveDirection  = Vector2.zero;
         private                    SpriteRenderer SpriteRenderer;
@@ -176,6 +176,11 @@ namespace Gameplay
                 LeanTween.cancel(_infectedDescrId);
                 Destroy(gameObject);
             }
+        }
+
+        protected void OnDestroy()
+        {
+            CharacterManager.CharacterDestroyed(this);
         }
     }
 }

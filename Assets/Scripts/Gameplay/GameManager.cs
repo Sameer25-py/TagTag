@@ -10,10 +10,9 @@ namespace Gameplay
 {
     public class GameManager : MonoBehaviour
     {
-        public List<Round>        Rounds;
-        public BrainManager       BrainManager;
-        public InteractionManager InteractionManager;
-        public GameObject         Menu;
+        public List<Round>      Rounds;
+        public GameObject       Menu;
+        public CharacterManager CharacterManager;
 
         public GameObject BackButton;
         public TMP_Text   PauseTitle, PauseDescription;
@@ -44,10 +43,8 @@ namespace Gameplay
         private void StartRound(Round round)
         {
             RoundText.SetRound(round.Index);
-            InteractionManager.SetRound(round);
+            CharacterManager.InitializeRound();
             Timer.StartTimer(round.Time);
-            BrainManager.InitializeBrains();
-            BrainManager.ChangeBrainsMovementStatus(true);
         }
 
         private void StartRoundWithDelay()
@@ -69,7 +66,7 @@ namespace Gameplay
 
         private void EndRound()
         {
-            BrainManager.ChangeBrainsMovementStatus(false);
+            CharacterManager.ChangeCharactersMovementStatus(false);
             Invoke(nameof(StartRoundWithDelay), 1f);
         }
 
@@ -86,7 +83,7 @@ namespace Gameplay
             BackButton.SetActive(true);
             Menu.SetActive(true);
             Timer.PauseTimer();
-            BrainManager.ChangeBrainsMovementStatus(false);
+            CharacterManager.ChangeCharactersMovementStatus(false);
         }
 
         public void HomeButton()
@@ -98,14 +95,14 @@ namespace Gameplay
         {
             Menu.SetActive(false);
             Timer.ResumeTimer();
-            BrainManager.ChangeBrainsMovementStatus(true);
+            CharacterManager.ChangeCharactersMovementStatus(true);
         }
 
         private void GameEnd()
         {
             PauseTitle.text = "game over";
-            Brain brain = BrainManager.GetBrains[0];
-            if (brain is AI)
+            Character c     = CharacterManager.GetCharacters[0];
+            if (c is Computer)
             {
                 PauseDescription.text = "ai won";
             }
