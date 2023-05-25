@@ -7,13 +7,12 @@ namespace Gameplay
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            GetComponent<Gameplay.Grid.Character>()
-                .UnInfectCharacter();
-
-            col.GetComponent<Brain>()
-                .InfectBrain();
-
-            Destroy(this);
+            if (col.gameObject.TryGetComponent(out Gameplay.Character c))
+            {
+                c.InfectCharacter();
+                GetComponent<Character>()
+                    .UnInfectCharacter();
+            }
         }
     }
 }

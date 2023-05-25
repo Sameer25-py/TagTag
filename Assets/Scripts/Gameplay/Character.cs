@@ -20,12 +20,14 @@ namespace Gameplay
         private static readonly    int            s_moveLeft = Animator.StringToHash("moveLeft");
         private static readonly    int            s_moveUp   = Animator.StringToHash("moveUp");
         private static readonly    int            s_isMoving = Animator.StringToHash("isMoving");
+        public                     bool           IsInfected = false;
 
-        private Vector2 currentPosition;
-        private Vector2 previousPosition;
-        private bool    moveLeft;
-        private bool    moveUp;
-        private bool    isMoving;
+        private Vector2       currentPosition;
+        private Vector2       previousPosition;
+        private bool          moveLeft;
+        private bool          moveUp;
+        private bool          isMoving;
+        private BoxCollider2D _collider2D;
 
         protected virtual void OnEnable()
         {
@@ -33,6 +35,7 @@ namespace Gameplay
             _audioSource   =  GetComponent<AudioSource>();
             SpriteRenderer =  GetComponent<SpriteRenderer>();
             _defaultColor  =  SpriteRenderer.color;
+            _collider2D    =  GetComponent<BoxCollider2D>();
             Timer.TimerEnd += BlastCharacter;
             _animator      =  GetComponent<Animator>();
         }
@@ -122,28 +125,48 @@ namespace Gameplay
             _animator.SetBool(s_isMoving, isMoving);
         }
 
+        private void EnableCollider()
+        {
+            _collider2D.enabled = true;
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.CompareTag("ItPerson"))
+            {
+                InfectCharacter();
+            }
+
+            else if (col.CompareTag("Player") && IsInfected)
+            {
+                UnInfectCharacter();
+            }
+        }
+
         public void InfectCharacter()
         {
+            IsInfected     = true;
+            gameObject.tag = "ItPerson";
+            Debug.Log("infected: " + gameObject.name);
             LTDescr descr = LeanTween.color(gameObject, InfectedColor, 0.5f)
                 .setLoopPingPong(-1)
                 .setEaseInOutBounce();
             _infectedDescrId = descr.id;
+            _audioSource.PlayOneShot(Tag);
         }
 
         public void UnInfectCharacter()
         {
+            IsInfected     = false;
+            gameObject.tag = "Player";
+            Debug.Log("uninfected: " + gameObject.name);
             LeanTween.cancel(_infectedDescrId);
             SpriteRenderer.color = _defaultColor;
-            if (TryGetComponent(out InfectedCollider col))
-            {
-                _audioSource.PlayOneShot(Tag);
-                Destroy(col);
-            }
         }
 
         public void BlastCharacter()
         {
-            if (TryGetComponent(out InfectedCollider _))
+            if (IsInfected)
             {
                 AudioManager.PlayExplosionSound();
                 LeanTween.cancel(_infectedDescrId);

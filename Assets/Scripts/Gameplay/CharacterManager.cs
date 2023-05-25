@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Gameplay
 {
     public class CharacterManager : MonoBehaviour
     {
-        private Camera _mainCamera;
-
         [SerializeField] private List<Character> characters;
 
-        private void OnEnable()
+        private void SpawnCharactersAtRandomPoints()
         {
-            _mainCamera = Camera.main;
+            foreach (Character c in characters)
+            {
+                SpawnCharacterAtRandomPoint(c);
+            }
         }
 
         private void SpawnCharacterAtRandomPoint(Character character)
@@ -21,12 +23,17 @@ namespace Gameplay
                 RandomPointGenerator.GetRandomPointOnMap();
 
             character.transform.position = randomPoint;
+        }
 
+        private void SelectRandomCharacterToInfect()
+        {
+            characters[Random.Range(0,characters.Count)].InfectCharacter();
         }
 
         private void Start()
         {
-            SpawnCharacterAtRandomPoint(characters[0]);
+            SpawnCharactersAtRandomPoints();
+            SelectRandomCharacterToInfect();
         }
     }
 }
