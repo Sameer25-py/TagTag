@@ -21,8 +21,9 @@ namespace Gameplay
 
         private void Start()
         {
-            GeneratePath();
+            InvokeRepeating(nameof(GeneratePath), 0f, 1.5f);
         }
+
 
         private void GeneratePath()
         {
@@ -61,9 +62,8 @@ namespace Gameplay
         {
             if (!p.error)
             {
-                path             = p;
-                currentWayPoint  = 0;
-                reachedEndOfPath = false;
+                path            = p;
+                currentWayPoint = 0;
             }
         }
 
@@ -73,7 +73,6 @@ namespace Gameplay
             if (currentWayPoint >= path.vectorPath.Count)
             {
                 reachedEndOfPath = true;
-                GeneratePath();
                 return;
             }
             else
