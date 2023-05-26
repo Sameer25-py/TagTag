@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Round 2
   m_EditorClassIdentifier: 
   Index: 2
-  Time: 90
+  Time: 30
   AllowedInteractables:
   - {fileID: 11400000, guid: 9a75162ebfabb4561b2d4997eeebaad1, type: 2}
   - {fileID: 11400000, guid: 1beeb11eb171541648204db8db9b7afb, type: 2}
