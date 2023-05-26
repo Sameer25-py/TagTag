@@ -1,4 +1,5 @@
-﻿using Pathfinding;
+﻿using System.Collections;
+using Pathfinding;
 using UnityEngine;
 
 
@@ -6,10 +7,15 @@ namespace Gameplay
 {
     public class Computer : Character
     {
-        public  float NextWayPointDistance = 0.3f;
-        private Path  path;
-        private int   currentWayPoint  = 0;
-        private bool  reachedEndOfPath = false;
+        public  float     NextWayPointDistance = 0.1f;
+        private Path      path;
+        private int       currentWayPoint  = 0;
+        private bool      reachedEndOfPath = false;
+        private Transform _cachedFollowTransform;
+
+        [SerializeField] private Transform randomLocations;
+
+        private Coroutine _creatPathCoroutine;
 
         private Seeker seeker;
 
@@ -21,40 +27,42 @@ namespace Gameplay
 
         private void Start()
         {
-            InvokeRepeating(nameof(GeneratePath), 0f, 1.5f);
+            StartSeekBehavior();
         }
 
-
-        private void GeneratePath()
+        private void StartSeekBehavior()
         {
-            if (!IsInfected)
+            if (IsInfected)
             {
-                seeker.StartPath(transform.position, RandomPointGenerator.GetRandomPointOnMap(), OnPathComplete);
+                SeekRandomCharacter();
             }
             else
             {
-                Character[] chrs                  = FindObjectsOfType<Character>();
-                float       minDistance           = -1f;
-                Character   candidateFollowTarget = null;
-                foreach (var chr in chrs)
+                SeekRandomLocation();
+            }
+
+            seeker.StartPath(transform.position, _cachedFollowTransform.position, OnPathComplete);
+        }
+
+        private void SeekRandomLocation()
+        {
+            Transform randomLocation = randomLocations.GetChild(Random.Range(0, randomLocations.childCount));
+            _cachedFollowTransform = randomLocation;
+        }
+
+        private void SeekRandomCharacter()
+        {
+            Character[] chr = FindObjectsOfType<Character>(false);
+            for (int i = 0; i < 10; i++)
+            {
+                Character randomChr = chr[Random.Range(0, chr.Length)];
+                if (randomChr == this)
                 {
-                    if (chr == this) continue;
-                    float distance = Vector2.Distance(chr.transform.position, transform.position);
-                    if (distance < minDistance)
-                    {
-                        minDistance           = distance;
-                        candidateFollowTarget = chr;
-                    }
+                    continue;
                 }
 
-                if (!candidateFollowTarget)
-                {
-                    seeker.StartPath(transform.position, RandomPointGenerator.GetRandomPointOnMap(), OnPathComplete);
-                }
-                else
-                {
-                    seeker.StartPath(transform.position, candidateFollowTarget.transform.position, OnPathComplete);
-                }
+                _cachedFollowTransform = randomChr.transform;
+                break;
             }
         }
 
@@ -62,8 +70,9 @@ namespace Gameplay
         {
             if (!p.error)
             {
-                path            = p;
-                currentWayPoint = 0;
+                path             = p;
+                currentWayPoint  = 0;
+                reachedEndOfPath = false;
             }
         }
 
@@ -73,6 +82,7 @@ namespace Gameplay
             if (currentWayPoint >= path.vectorPath.Count)
             {
                 reachedEndOfPath = true;
+                StartSeekBehavior();
                 return;
             }
             else

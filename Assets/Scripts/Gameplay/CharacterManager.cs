@@ -10,8 +10,9 @@ namespace Gameplay
     {
         [SerializeField] private List<Character> characters;
 
-        public static Action<Character> CharacterDestroyed;
-        public static Action<Character> InfectRandomCharacterExcept;
+        public static            Action<Character> CharacterDestroyed;
+        public static            Action<Character> InfectRandomCharacterExcept;
+        [SerializeField] private Transform         randomLocations;
 
         public List<Character> GetCharacters => characters;
 
@@ -25,8 +26,8 @@ namespace Gameplay
 
         private void SpawnCharacterAtRandomPoint(Character character)
         {
-            Vector2 randomPoint =
-                RandomPointGenerator.GetRandomPointOnMap();
+            Vector2 randomPoint = randomLocations.GetChild(Random.Range(0, randomLocations.childCount))
+                .position;
 
             character.transform.position = randomPoint;
         }
