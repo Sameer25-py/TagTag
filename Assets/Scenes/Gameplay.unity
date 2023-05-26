@@ -13925,6 +13925,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4747581624384265468, guid: 8ac2a02b2e49941b6b947949fa0d0ea3, type: 3}
+      propertyPath: autoRepath.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747581624384265468, guid: 8ac2a02b2e49941b6b947949fa0d0ea3, type: 3}
+      propertyPath: endReachedDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4893391814678906455, guid: 8ac2a02b2e49941b6b947949fa0d0ea3, type: 3}
       propertyPath: m_RootOrder
       value: 6
