@@ -22,15 +22,18 @@ namespace Gameplay
         protected override void OnEnable()
         {
             base.OnEnable();
-            seeker = GetComponent<Seeker>();
+            GameManager.RoundStarted += OnNewRoundStarted;
+            seeker                   =  GetComponent<Seeker>();
         }
 
-        private void Start()
+        private void OnNewRoundStarted()
         {
-            StartSeekBehavior();
+            path             = null;
+            currentWayPoint  = 0;
+            reachedEndOfPath = true;
         }
 
-        private void StartSeekBehavior()
+        public void StartSeekBehavior()
         {
             if (IsInfected)
             {

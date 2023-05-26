@@ -43,6 +43,7 @@ namespace Gameplay
 
         private void StartRound(Round round)
         {
+            RoundStarted();
             RoundText.SetRound(round.Index);
             CharacterManager.InitializeRound();
             InteractableManager.Initialize(round);

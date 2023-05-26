@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,11 +14,13 @@ namespace Gameplay
         public static            Action<Character> CharacterDestroyed;
         public static            Action<Character> InfectRandomCharacterExcept;
         [SerializeField] private Transform         randomLocations;
+        private                  List<Vector2>     _cachedSpawnPoints;
 
         public List<Character> GetCharacters => characters;
 
         private void SpawnCharactersAtRandomPoints()
         {
+            _cachedSpawnPoints = new();
             foreach (Character c in characters)
             {
                 SpawnCharacterAtRandomPoint(c);
@@ -28,8 +31,15 @@ namespace Gameplay
         {
             Vector2 randomPoint = randomLocations.GetChild(Random.Range(0, randomLocations.childCount))
                 .position;
-
-            character.transform.position = randomPoint;
+            if (_cachedSpawnPoints.Contains(randomPoint))
+            {
+                SpawnCharacterAtRandomPoint(character);
+            }
+            else
+            {
+                character.transform.position = randomPoint;
+                _cachedSpawnPoints.Add(randomPoint);
+            }
         }
 
         private void SelectRandomCharacterToInfect(Character characterToExclude = null)
@@ -69,11 +79,23 @@ namespace Gameplay
             }
         }
 
+        private void CallCharactersAIToSeekPath()
+        {
+            foreach (Character c in characters)
+            {
+                if (c is Computer computer)
+                {
+                    computer.StartSeekBehavior();
+                }
+            }
+        }
+
         private IEnumerator InitializeRoundRoutine()
         {
             SpawnCharactersAtRandomPoints();
             RemoveInfectionFromAllCharacters();
             SelectRandomCharacterToInfect();
+            CallCharactersAIToSeekPath();
             ChangeCharactersMovementStatus(false);
             yield return new WaitForSeconds(1f);
             ChangeCharactersMovementStatus(true);
