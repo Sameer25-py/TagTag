@@ -60,9 +60,18 @@ namespace Gameplay
             }
         }
 
+        private void RemoveInfectionFromAllCharacters()
+        {
+            foreach (Character c in characters)
+            {
+                c.UnInfectCharacter();
+            }
+        }
+
         private IEnumerator InitializeRoundRoutine()
         {
             SpawnCharactersAtRandomPoints();
+            RemoveInfectionFromAllCharacters();
             SelectRandomCharacterToInfect();
             ChangeCharactersMovementStatus(false);
             yield return new WaitForSeconds(1f);
